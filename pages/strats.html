@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FKB Stratbook — Fjærkrebandittene</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&family=Share+Tech+Mono&family=Barlow+Condensed:wght@300;400;500;600;700;800;900&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🦀</text></svg>">
+</head>
+<body>
+
+  <!-- ── TOP BAR ── -->
+  <header id="topbar">
+    <div class="logo">
+      <div class="logo-icon">
+        <svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="28" height="28" rx="3" fill="#0e1117"/>
+          <text x="4" y="22" font-size="18" fill="#f0901a">🦀</text>
+        </svg>
+      </div>
+      <div class="logo-text">FKB <span>Stratbook</span></div>
+    </div>
+
+    <nav class="main-nav">
+      <a href="strats.html" class="active">Stratbook</a>
+      <a href="kamper.html">Kamper</a>
+    </nav>
+
+    <div class="topbar-right">
+      <div class="live-dot"></div>
+      <span id="clock">--:--:--</span>
+      <button id="theme-toggle" onclick="toggleTheme()" title="Bytt tema">☀️</button>
+    </div>
+  </header>
+
+  <!-- ── MAIN LAYOUT ── -->
+  <div class="layout">
+
+    <!-- ── SIDEBAR ── -->
+    <nav id="sidebar">
+      <div class="sidebar-label">Kart</div>
+      <a class="sidebar-link active" href="#map-mirage">
+        <span class="map-dot"></span>Mirage
+      </a>
+      <a class="sidebar-link" href="#map-inferno">
+        <span class="map-dot"></span>Inferno
+      </a>
+      <a class="sidebar-link" href="#map-nuke">
+        <span class="map-dot"></span>Nuke
+      </a>
+      <a class="sidebar-link" href="#map-overpass">
+        <span class="map-dot"></span>Overpass
+      </a>
+      <a class="sidebar-link" href="#map-ancient">
+        <span class="map-dot"></span>Ancient
+      </a>
+      <a class="sidebar-link" href="#map-anubis">
+        <span class="map-dot"></span>Anubis
+      </a>
+      <a class="sidebar-link" href="#map-dust2">
+        <span class="map-dot"></span>Dust 2
+      </a>
+    </nav>
+
+    <!-- ── MAIN ── -->
+    <main id="main">
+      <div class="page-header">
+        <div>
+          <div class="page-title">T-Side <span class="accent">Stratbook</span></div>
+          <div class="page-subtitle">// FJÆRKREBANDITTENE CS2 — INTERN TAKTIKK — IKKE DEL</div>
+        </div>
+      </div>
+
+      <!-- Player legend -->
+      <div class="legend-card">
+        <div class="legend-card-title">Spilleroversikt</div>
+        <div class="legend-item"><span class="ptag s">S15T3M</span> IGL / Lurk</div>
+        <div class="legend-item"><span class="ptag o">Ole</span> Support / Anchor</div>
+        <div class="legend-item"><span class="ptag p">propit3</span> Entry / Rifler</div>
+        <div class="legend-item"><span class="ptag b">Birk</span> Entry / AWP</div>
+        <div class="legend-item"><span class="ptag m">Mekkis</span> AWP / Support</div>
+      </div>
+
+      <!-- Strat content (rendered by app.js) -->
+      <div id="strat-content"></div>
+    </main>
+
+  </div>
+
+  <script src="../js/data.js"></script>
+  <script src="../js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FKB Kamper — Fjærkrebandittene</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&family=Share+Tech+Mono&family=Barlow+Condensed:wght@300;400;500;600;700;800;900&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🦀</text></svg>">
+</head>
+<body>
+
+  <!-- ── TOP BAR ── -->
+  <header id="topbar">
+    <div class="logo">
+      <div class="logo-icon">
+        <svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="28" height="28" rx="3" fill="#0e1117"/>
+          <text x="4" y="22" font-size="18" fill="#f0901a">🦀</text>
+        </svg>
+      </div>
+      <div class="logo-text">FKB <span>Stratbook</span></div>
+    </div>
+
+    <nav class="main-nav">
+      <a href="strats.html">Stratbook</a>
+      <a href="kamper.html" class="active">Kamper</a>
+    </nav>
+
+    <div class="topbar-right">
+      <div class="live-dot"></div>
+      <span id="clock">--:--:--</span>
+      <button id="theme-toggle" onclick="toggleTheme()" title="Bytt tema">☀️</button>
+    </div>
+  </header>
+
+  <!-- ── MAIN LAYOUT (no sidebar on kamper page) ── -->
+  <div class="layout layout-nosidebar">
+
+    <main id="main">
+      <div class="page-header">
+        <div>
+          <div class="page-title">Kamp<span class="accent">oversikt</span></div>
+          <div class="page-subtitle">// SESONGOVERSIKT — KOMPLETTLIGAEN CS2</div>
+        </div>
+      </div>
+
+      <!-- Season stats bar -->
+      <div id="season-bar" class="season-bar"></div>
+
+      <!-- Kamper layout: match lists left, panels right -->
+      <div class="kamper-layout">
+
+        <!-- ── LEFT: Match lists ── -->
+        <div class="kamper-left">
+
+          <div class="section-divider">Spilte kamper</div>
+          <div id="played-list" class="match-list"></div>
+
+          <div class="section-divider">Kommende kamper</div>
+          <div id="upcoming-list" class="match-list"></div>
+
+        </div>
+
+        <!-- ── RIGHT: Side panels ── -->
+        <div class="kamper-right">
+
+          <!-- Next match box -->
+          <div id="next-match-box"></div>
+
+          <!-- League standings -->
+          <div class="side-panel">
+            <div class="side-panel-header">
+              <span>Tabell</span>
+              <span>Komplettligaen</span>
+            </div>
+            <div class="side-panel-body">
+              <div id="standings-list"></div>
+            </div>
+          </div>
+
+          <!-- Map win stats -->
+          <div class="side-panel">
+            <div class="side-panel-header">
+              <span>Kartoversikt</span>
+            </div>
+            <div class="side-panel-body">
+              <div id="map-stats-list"></div>
+            </div>
+          </div>
+
+          <!-- Player stats -->
+          <div class="side-panel">
+            <div class="side-panel-header">
+              <span>Spillerstatistikk</span>
+              <span id="player-stats-result" style="color:var(--orange);"></span>
+            </div>
+            <div class="side-panel-body">
+              <div style="margin-bottom:8px;">
+                <div style="display:grid;grid-template-columns:1fr repeat(5,40px);gap:4px;padding:3px 0 6px;border-bottom:1px solid var(--border2);font-family:'Share Tech Mono',monospace;font-size:8px;letter-spacing:.1em;text-transform:uppercase;" id="player-stats-header"></div>
+              </div>
+              <div id="player-stats-list"></div>
+              <div id="player-stats-meta" style="margin-top:8px;font-family:'Share Tech Mono',monospace;font-size:9px;color:var(--text3);letter-spacing:.05em;"></div>
+            </div>
+          </div>
+
+        </div><!-- /.kamper-right -->
+
+      </div><!-- /.kamper-layout -->
+    </main>
+
+  </div><!-- /.layout -->
+
+  <script src="../js/data.js"></script>
+  <script src="../js/app.js"></script>
+</body>
+</html>
