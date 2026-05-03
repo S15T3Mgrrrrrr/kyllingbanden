@@ -366,7 +366,7 @@ function renderPlayerStats() {
       <span style="color:var(--orange)">Rating</span>`;
   }
 
-  const colorMap = { S15T3M: 'var(--c-s15)', propit3: 'var(--c-pro)', MEKKISSSS: 'var(--c-mek)', G1zdani: 'var(--c-g1z)', Olelelele: 'var(--c-ole)' };
+  const colorMap = { S15T3M: 'var(--c-s15)', propit3: 'var(--c-pro)', MEKKISSSS: 'var(--c-mek)', G1zdani: 'var(--c-g1z)', Birk: 'var(--c-birk)', Olelelele: 'var(--c-ole)' };
 
   const sorted = [...SPILLERSTATS.spillere].sort((a, b) => b.r - a.r);
   el.innerHTML = sorted.map(p => {
