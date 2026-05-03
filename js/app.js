@@ -396,7 +396,20 @@ function initSidebarObserver() {
   const sidebarLinks = document.querySelectorAll('.sidebar-link[href^="#map-"]');
   if (!sidebarLinks.length) return;
 
+  /* Set active immediately on click, before scroll settles */
+  let clickedLink = null;
+  sidebarLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      setSidebarActive(link);
+      clickedLink = link;
+      /* Allow observer to take over again after scroll animation (~1s) */
+      setTimeout(() => { clickedLink = null; }, 1000);
+    });
+  });
+
   const observer = new IntersectionObserver(entries => {
+    /* Skip observer updates while a click is in progress */
+    if (clickedLink) return;
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         const id = entry.target.id;
