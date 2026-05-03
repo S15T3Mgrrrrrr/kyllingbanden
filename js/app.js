@@ -12,7 +12,7 @@ function ptag(names) {
     'Ole':       ['o', 'Ole'],
     'Olelelele': ['o', 'Ole'],
     'propit3':   ['p', 'propit3'],
-    'G1zdani':   ['b', 'G1zdani'],
+    'G1zdani':   ['g', 'G1zdani'],
     'Birk':      ['b', 'Birk'],
     'Mekkis':    ['m', 'Mekkis'],
     'MEKKISSSS': ['m', 'Mekkis'],
