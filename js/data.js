@@ -89,7 +89,7 @@ const maps = {
         inspired: "",
         desc:     "Slow default bygd rundt mid-kontroll. Contest window, ta underpass, samle info.",
         steps: [
-          { text: "Smoke window room tidlig — A lurk", players: ["S15T3M"] },
+          { text: "Smoke window tidlig — A lurk", players: ["S15T3M"] },
           { text: "Ta top-mid og short control uten å over-committe", players: ["Ole", "Birk"] },
           { text: "2 players spiller default B (apps + under)", players: ["propit3", "Mekkis"] },
           { text: "Late-round: convert mid til connector eller B short push", players: ["S15T3M", "propit3"] },
