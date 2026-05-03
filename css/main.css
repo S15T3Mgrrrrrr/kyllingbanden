@@ -335,6 +335,7 @@ body::before {
 .ptag.p { background: #301a05; color: #f0901a; border: 1px solid #5a3010; }
 .ptag.b { background: #2a0d0d; color: #e05252; border: 1px solid #501818; }
 .ptag.m { background: #1e1535; color: #9b7fd4; border: 1px solid #382860; }
+.ptag.g { background: #2a1f00; color: #f5c518; border: 1px solid #7a5c00; }
 
 /* ── MAP SECTION ── */
 .map-section {
