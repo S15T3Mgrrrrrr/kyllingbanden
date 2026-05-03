@@ -36,6 +36,14 @@
   --c-g1z: #f5c518;
 }
 
+.player-link {
+  text-decoration: none;
+}
+.player-link:hover .ptag {
+  opacity: 0.75;
+  transition: opacity 0.15s;
+}
+
 /* ── LIGHT MODE ── */
 html.light {
   --bg:        #f0f2f5;
