@@ -98,5 +98,13 @@
 
   <script src="../js/data.js"></script>
   <script src="../js/app.js"></script>
+  <script>
+  function toggleSidebar() {
+    const sidebar = document.getElementById('sidebar');
+    const icon = document.getElementById('toggle-icon');
+    sidebar.classList.toggle('collapsed');
+    icon.textContent = sidebar.classList.contains('collapsed') ? '▶' : '◀';
+  }
+</script>
 </body>
 </html>
