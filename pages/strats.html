@@ -40,31 +40,36 @@
   <div class="layout">
 
     <!-- ── SIDEBAR ── -->
-    <nav id="sidebar">
-      <div class="sidebar-label">Kart</div>
-      <a class="sidebar-link active" href="#map-mirage">
-        <span class="map-dot"></span>Mirage
-      </a>
-      <a class="sidebar-link" href="#map-inferno">
-        <span class="map-dot"></span>Inferno
-      </a>
-      <a class="sidebar-link" href="#map-nuke">
-        <span class="map-dot"></span>Nuke
-      </a>
-      <a class="sidebar-link" href="#map-overpass">
-        <span class="map-dot"></span>Overpass
-      </a>
-      <a class="sidebar-link" href="#map-ancient">
-        <span class="map-dot"></span>Ancient
-      </a>
-      <a class="sidebar-link" href="#map-anubis">
-        <span class="map-dot"></span>Anubis
-      </a>
-      <a class="sidebar-link" href="#map-dust2">
-        <span class="map-dot"></span>Dust 2
-      </a>
-    </nav>
-
+<nav id="sidebar">
+  <button id="sidebar-toggle" onclick="toggleSidebar()">
+    <span id="toggle-icon">◀</span>
+  </button>
+  <div class="sidebar-inner">
+    <div class="sidebar-label">Kart</div>
+    <a class="sidebar-link active" href="#map-mirage">
+      <span class="map-dot"></span>Mirage
+    </a>
+    <a class="sidebar-link" href="#map-inferno">
+      <span class="map-dot"></span>Inferno
+    </a>
+    <a class="sidebar-link" href="#map-nuke">
+      <span class="map-dot"></span>Nuke
+    </a>
+    <a class="sidebar-link" href="#map-overpass">
+      <span class="map-dot"></span>Overpass
+    </a>
+    <a class="sidebar-link" href="#map-ancient">
+      <span class="map-dot"></span>Ancient
+    </a>
+    <a class="sidebar-link" href="#map-anubis">
+      <span class="map-dot"></span>Anubis
+    </a>
+    <a class="sidebar-link" href="#map-dust2">
+      <span class="map-dot"></span>Dust 2
+    </a>
+  </div>
+</nav>
+    
     <!-- ── MAIN ── -->
     <main id="main">
       <div class="page-header">
