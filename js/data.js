@@ -752,7 +752,7 @@ const maps = {
         desc:     "Tidlig mid-press for å samle info, split CTs mellom mid og site defense.",
         steps: [
           { text: "2 players contester Mid-Bridge", players: ["S15T3M", "propit3"] },
-          { text: "Gjenværende kjører balansert A/B presence", players: ["Birk", "Ole", "Gizdani"] },
+          { text: "Gjenværende kjører balansert A/B presence", players: ["Birk", "Ole", "G1zdani"] },
           { text: "Convert mid-kontroll til svakeste site", players: ["S15T3M"] },
           { text: "Default uten utility — pure posisjonelle reads", players: [""] }
         ],
