@@ -514,6 +514,34 @@
             </div>
           </div>
 
+          <!-- ── LAGOPPSTILLING ── -->
+          <div class="add-session-panel">
+            <div class="side-panel-header">
+              <span>⚔ Lagoppstilling</span>
+              <span>AKTIV LINEUP</span>
+            </div>
+            <div class="form-grid">
+              <div class="form-group full-width">
+                <label>Velg 5 spillere som starter</label>
+                <div class="player-checkboxes" id="lineup-checkboxes"></div>
+                <div id="lineup-warning" style="font-family:'Share Tech Mono',monospace;font-size:9px;color:var(--red);margin-top:6px;display:none;">// Velg nøyaktig 5 spillere</div>
+              </div>
+              <div class="form-group full-width">
+                <label>Reservespiller (valgfritt)</label>
+                <select id="lineup-reserve">
+                  <option value="">— Ingen reserve —</option>
+                </select>
+              </div>
+              <div class="full-width" style="display:flex;gap:8px;">
+                <button class="btn-add" onclick="saveLineup()">LAGRE LINEUP</button>
+              </div>
+              <div class="form-group full-width" id="lineup-display" style="display:none;">
+                <label>Aktiv lineup</label>
+                <div id="lineup-output" style="display:flex;flex-wrap:wrap;gap:6px;padding-top:4px;"></div>
+              </div>
+            </div>
+          </div>
+
           <!-- Upcoming sessions -->
           <div class="sessions-section">
             <div class="section-divider">Kommende treninger</div>
@@ -815,6 +843,78 @@
       renderCalendar();
     }
 
+    /* ── Lagoppstilling ── */
+    const LINEUP_KEY = 'fkb-lineup';
+
+    function initLineup() {
+      const cbContainer = document.getElementById('lineup-checkboxes');
+      const reserveSelect = document.getElementById('lineup-reserve');
+
+      PLAYERS.forEach(p => {
+        const label = document.createElement('label');
+        label.className = 'player-cb-label';
+        label.dataset.player = p;
+        label.innerHTML = `<input type="checkbox" value="${p}"> ${p}`;
+        label.addEventListener('click', (e) => {
+          e.preventDefault();
+          const checked = document.querySelectorAll('#lineup-checkboxes .player-cb-label.checked');
+          if (!label.classList.contains('checked') && checked.length >= 5) {
+            document.getElementById('lineup-warning').style.display = 'block';
+            return;
+          }
+          document.getElementById('lineup-warning').style.display = 'none';
+          label.classList.toggle('checked');
+          label.querySelector('input').checked = label.classList.contains('checked');
+        });
+        cbContainer.appendChild(label);
+      });
+
+      PLAYERS.forEach(p => {
+        const opt = document.createElement('option');
+        opt.value = p;
+        opt.textContent = p;
+        reserveSelect.appendChild(opt);
+      });
+
+      const saved = localStorage.getItem(LINEUP_KEY);
+      if (saved) {
+        const { starters, reserve } = JSON.parse(saved);
+        document.querySelectorAll('#lineup-checkboxes .player-cb-label').forEach(l => {
+          if (starters.includes(l.dataset.player)) {
+            l.classList.add('checked');
+            l.querySelector('input').checked = true;
+          }
+        });
+        if (reserve) reserveSelect.value = reserve;
+        showLineup(starters, reserve);
+      }
+    }
+
+    function saveLineup() {
+      const starters = [...document.querySelectorAll('#lineup-checkboxes .player-cb-label.checked')]
+        .map(l => l.dataset.player);
+      const reserve = document.getElementById('lineup-reserve').value;
+
+      if (starters.length !== 5) {
+        document.getElementById('lineup-warning').style.display = 'block';
+        return;
+      }
+      document.getElementById('lineup-warning').style.display = 'none';
+      localStorage.setItem(LINEUP_KEY, JSON.stringify({ starters, reserve }));
+      showLineup(starters, reserve);
+    }
+
+    function showLineup(starters, reserve) {
+      const display = document.getElementById('lineup-display');
+      const output  = document.getElementById('lineup-output');
+      const clsMap  = { s15t3m:'s', ole:'o', propit3:'p', g1zdani:'g', birk:'b', mekkis:'m' };
+      display.style.display = 'block';
+      output.innerHTML = starters.map(p => {
+        const cls = clsMap[p.toLowerCase()] || '';
+        return `<span class="ptag ${cls}">${p}</span>`;
+      }).join('') + (reserve ? `<span style="font-family:'Share Tech Mono',monospace;font-size:9px;color:var(--text3);margin-left:8px;align-self:center;">+ ${reserve} (reserve)</span>` : '');
+    }
+
     /* ── Boot ── */
     document.addEventListener('DOMContentLoaded', () => {
       // Apply saved theme
@@ -829,6 +929,7 @@
       updateClock();
       // Page
       initTimeplan();
+      initLineup();
     });
   </script>
 </body>
