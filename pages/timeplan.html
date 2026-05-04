@@ -908,11 +908,20 @@
       const display = document.getElementById('lineup-display');
       const output  = document.getElementById('lineup-output');
       const clsMap  = { s15t3m:'s', ole:'o', propit3:'p', g1zdani:'g', birk:'b', mekkis:'m' };
+      const roleMap = { S15T3M:'IGL / AWP', Ole:'Support / Rifler', propit3:'Entry / Support', G1zdani:'Lurk / Anchor', Birk:'Entry / Rifler', Mekkis:'Entry / Rifler' };
       display.style.display = 'block';
+      output.style.flexDirection = 'column';
+      output.style.gap = '7px';
       output.innerHTML = starters.map(p => {
-        const cls = clsMap[p.toLowerCase()] || '';
-        return `<span class="ptag ${cls}">${p}</span>`;
-      }).join('') + (reserve ? `<span style="font-family:'Share Tech Mono',monospace;font-size:9px;color:var(--text3);margin-left:8px;align-self:center;">+ ${reserve} (reserve)</span>` : '');
+        const cls  = clsMap[p.toLowerCase()] || '';
+        const role = roleMap[p] || '';
+        return `<div style="display:flex;align-items:center;gap:10px;">
+          <span class="ptag ${cls}">${p}</span>
+          <span style="font-family:'Barlow',sans-serif;font-size:12px;color:var(--text2);">${role}</span>
+        </div>`;
+      }).join('') + (reserve ? `<div style="display:flex;align-items:center;gap:10px;margin-top:2px;">
+          <span style="font-family:'Share Tech Mono',monospace;font-size:9px;color:var(--text3);">+ ${reserve} (reserve)</span>
+        </div>` : '');
     }
 
     /* ── Boot ── */
