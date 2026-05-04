@@ -734,7 +734,7 @@
         ? s.players.map(p => {
             const key = p.toLowerCase().replace(/\d+/g, '');
             const cls = {s15t3m:'s',ole:'o',propit3:'p',g1zdani:'g',birk:'b',mekkis:'m'}[p.toLowerCase().split(/\d/)[0]] || '';
-            return `<span class="ptag ${cls}">${p.split(/[^a-zA-Z]/)[0]}</span>`;
+            return `<span class="ptag ${cls}">${p}</span>`;
           }).join('') : '';
 
       const hasNotes = s.notes && s.notes.trim();
