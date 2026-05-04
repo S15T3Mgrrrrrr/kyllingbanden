@@ -733,7 +733,7 @@
       const playerTags = s.players.length
         ? s.players.map(p => {
             const key = p.toLowerCase().replace(/\d+/g, '');
-            const cls = {s15t3m:'s',ole:'o',propit3:'p',g1zdani:'g',birk:'b',mekkis:'m'}[p.toLowerCase().split(/\d/)[0]] || '';
+            const cls = {s15t3m:'s',ole:'o',propit3:'p',g1zdani:'g',birk:'b',mekkis:'m'}[p.toLowerCase()] || '';
             return `<span class="ptag ${cls}">${p}</span>`;
           }).join('') : '';
 
