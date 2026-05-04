@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FKB Timeplan — Fjærkrebandittene</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&family=Share+Tech+Mono&family=Barlow+Condensed:wght@300;400;500;600;700;800;900&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🦀</text></svg>">
+
+  <style>
+    /* ── TIMEPLAN PAGE STYLES ── */
+    .timeplan-layout {
+      display: grid;
+      grid-template-columns: 1fr 340px;
+      gap: 20px;
+      padding: 20px 24px;
+      max-width: 1400px;
+    }
+
+    /* ── ADD SESSION FORM ── */
+    .add-session-panel {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      overflow: hidden;
+      margin-bottom: 20px;
+    }
+    .add-session-panel .side-panel-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 14px;
+      background: var(--bg3);
+      border-bottom: 1px solid var(--border);
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 10px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--text2);
+    }
+    .add-session-panel .side-panel-header span:first-child {
+      color: var(--orange);
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      padding: 16px;
+    }
+    .form-grid .full-width {
+      grid-column: 1 / -1;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .form-group label {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 9px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--text3);
+    }
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: 3px;
+      padding: 7px 10px;
+      color: var(--text);
+      font-family: 'Barlow', sans-serif;
+      font-size: 13px;
+      transition: border-color .15s;
+      outline: none;
+    }
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+      border-color: var(--orange);
+    }
+    .form-group textarea {
+      resize: vertical;
+      min-height: 60px;
+    }
+    .form-group select option {
+      background: var(--bg3);
+    }
+
+    .player-checkboxes {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      padding: 8px 0 4px;
+    }
+    .player-cb-label {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      cursor: pointer;
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: 3px;
+      padding: 4px 8px;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: .05em;
+      color: var(--text2);
+      transition: all .15s;
+      user-select: none;
+    }
+    .player-cb-label input[type="checkbox"] { display: none; }
+    .player-cb-label.checked { border-color: var(--orange); color: var(--orange); background: var(--orange-dim); }
+    .player-cb-label:hover { border-color: var(--text3); color: var(--text); }
+
+    .btn-add {
+      background: var(--orange);
+      color: #000;
+      border: none;
+      border-radius: 3px;
+      padding: 9px 20px;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: opacity .15s, transform .1s;
+      width: 100%;
+    }
+    .btn-add:hover { opacity: .85; }
+    .btn-add:active { transform: scale(.98); }
+
+    /* ── SESSION CARDS ── */
+    .sessions-section {
+      margin-bottom: 24px;
+    }
+
+    .session-card {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      margin-bottom: 10px;
+      overflow: hidden;
+      transition: border-color .15s;
+    }
+    .session-card:hover { border-color: var(--border2); }
+
+    .session-card-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 14px;
+      gap: 12px;
+    }
+    .session-date-block {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: 3px;
+      padding: 6px 12px;
+      min-width: 58px;
+      flex-shrink: 0;
+    }
+    .session-day {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--orange);
+      line-height: 1;
+    }
+    .session-month {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 9px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--text3);
+      margin-top: 2px;
+    }
+
+    .session-info {
+      flex: 1;
+      min-width: 0;
+    }
+    .session-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: .04em;
+      color: var(--text);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .session-meta {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 3px;
+    }
+    .session-time {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 10px;
+      color: var(--text2);
+    }
+    .session-type-badge {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 9px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      padding: 2px 6px;
+      border-radius: 2px;
+      border: 1px solid;
+    }
+    .badge-trening  { color: var(--teal);   border-color: var(--teal);   background: var(--teal-dim); }
+    .badge-scrimmage{ color: var(--blue);   border-color: var(--blue);   background: var(--blue-dim); }
+    .badge-møte     { color: var(--purple); border-color: var(--purple); background: var(--purple-dim); }
+    .badge-annet    { color: var(--text2);  border-color: var(--border2); background: var(--bg3); }
+
+    .session-players {
+      display: flex;
+      gap: 4px;
+      align-items: center;
+      flex-shrink: 0;
+    }
+
+    .session-card-body {
+      border-top: 1px solid var(--border);
+      padding: 10px 14px;
+      font-size: 12px;
+      color: var(--text2);
+      font-style: italic;
+      display: none;
+    }
+    .session-card.expanded .session-card-body { display: block; }
+
+    .session-actions {
+      display: flex;
+      gap: 6px;
+      flex-shrink: 0;
+    }
+    .btn-icon {
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: 3px;
+      color: var(--text3);
+      cursor: pointer;
+      font-size: 12px;
+      padding: 4px 8px;
+      transition: all .15s;
+      font-family: 'Share Tech Mono', monospace;
+    }
+    .btn-icon:hover { border-color: var(--text3); color: var(--text); }
+    .btn-icon.del:hover { border-color: var(--red); color: var(--red); background: var(--red-dim); }
+
+    /* ── COUNTDOWN WIDGET ── */
+    .countdown-panel {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      overflow: hidden;
+      margin-bottom: 16px;
+    }
+    .countdown-inner {
+      padding: 18px 16px;
+      text-align: center;
+    }
+    .countdown-label {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 9px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--text3);
+      margin-bottom: 10px;
+    }
+    .countdown-next-name {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 14px;
+    }
+    .countdown-digits {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+    }
+    .cd-block {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: 3px;
+      padding: 8px 12px;
+      min-width: 52px;
+    }
+    .cd-num {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 24px;
+      color: var(--orange);
+      line-height: 1;
+    }
+    .cd-unit {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 8px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--text3);
+      margin-top: 3px;
+    }
+    .countdown-none {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 11px;
+      color: var(--text3);
+      padding: 20px;
+      text-align: center;
+    }
+
+    /* ── MINI CALENDAR ── */
+    .mini-cal {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    .mini-cal-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 8px 12px;
+      background: var(--bg3);
+      border-bottom: 1px solid var(--border);
+    }
+    .mini-cal-title {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 10px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--text2);
+    }
+    .mini-cal-nav {
+      display: flex;
+      gap: 4px;
+    }
+    .mini-cal-nav button {
+      background: var(--bg4);
+      border: 1px solid var(--border);
+      border-radius: 2px;
+      color: var(--text2);
+      cursor: pointer;
+      font-size: 11px;
+      padding: 2px 7px;
+      transition: all .15s;
+    }
+    .mini-cal-nav button:hover { border-color: var(--orange); color: var(--orange); }
+    .cal-grid {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 0;
+      padding: 10px;
+    }
+    .cal-day-name {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 8px;
+      text-align: center;
+      color: var(--text3);
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      padding: 4px 0;
+    }
+    .cal-cell {
+      aspect-ratio: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Barlow', sans-serif;
+      font-size: 12px;
+      color: var(--text2);
+      border-radius: 3px;
+      cursor: default;
+      position: relative;
+      transition: background .1s;
+    }
+    .cal-cell.today {
+      background: var(--orange-dim);
+      color: var(--orange);
+      font-weight: 700;
+    }
+    .cal-cell.has-session::after {
+      content: '';
+      position: absolute;
+      bottom: 3px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: var(--orange);
+    }
+    .cal-cell.empty { color: transparent; cursor: default; }
+
+    /* ── EMPTY STATE ── */
+    .empty-state {
+      text-align: center;
+      padding: 40px 20px;
+      color: var(--text3);
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 11px;
+      letter-spacing: .08em;
+    }
+    .empty-state .empty-icon { font-size: 32px; margin-bottom: 12px; opacity: .4; }
+
+    @media (max-width: 900px) {
+      .timeplan-layout {
+        grid-template-columns: 1fr;
+        padding: 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── TOP BAR ── -->
+  <header id="topbar">
+    <div class="logo">
+      <div class="logo-icon">
+        <svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="28" height="28" rx="3" fill="#0e1117"/>
+          <text x="4" y="22" font-size="18" fill="#f0901a">🦀</text>
+        </svg>
+      </div>
+      <div class="logo-text">FKB <span>Stratbook</span></div>
+    </div>
+
+    <nav class="main-nav">
+      <a href="strats.html">Stratbook</a>
+      <a href="kamper.html">Kamper</a>
+      <a href="Timeplan.html" class="active">Timeplan</a>
+    </nav>
+
+    <div class="topbar-right">
+      <div class="live-dot"></div>
+      <span id="clock">--:--:--</span>
+      <button id="theme-toggle" onclick="toggleTheme()" title="Bytt tema">☀️</button>
+    </div>
+  </header>
+
+  <!-- ── MAIN LAYOUT ── -->
+  <div class="layout layout-nosidebar">
+    <main id="main">
+
+      <div class="page-header">
+        <div>
+          <div class="page-title">Trenings<span class="accent">plan</span></div>
+          <div class="page-subtitle">// FREMTIDIGE TRENINGER OG AVTALER</div>
+        </div>
+      </div>
+
+      <div class="timeplan-layout">
+
+        <!-- ── LEFT: Sessions ── -->
+        <div class="timeplan-left">
+
+          <!-- Add new session form -->
+          <div class="add-session-panel">
+            <div class="side-panel-header">
+              <span>+ Legg til økt</span>
+              <span>NY TRENING</span>
+            </div>
+            <div class="form-grid">
+              <div class="form-group">
+                <label>Tittel</label>
+                <input type="text" id="input-title" placeholder="f.eks. Ukentlig trening" />
+              </div>
+              <div class="form-group">
+                <label>Type</label>
+                <select id="input-type">
+                  <option value="trening">Trening</option>
+                  <option value="scrimmage">Scrimmage</option>
+                  <option value="møte">Møte</option>
+                  <option value="annet">Annet</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Dato</label>
+                <input type="date" id="input-date" />
+              </div>
+              <div class="form-group">
+                <label>Tidspunkt</label>
+                <input type="time" id="input-time" placeholder="20:00" />
+              </div>
+              <div class="form-group full-width">
+                <label>Spillere som deltar</label>
+                <div class="player-checkboxes" id="player-checkboxes"></div>
+              </div>
+              <div class="form-group full-width">
+                <label>Notater (valgfritt)</label>
+                <textarea id="input-notes" placeholder="Fokusområder, mål for økt, etc."></textarea>
+              </div>
+              <div class="full-width">
+                <button class="btn-add" onclick="addSession()">LEGG TIL ØKT</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Upcoming sessions -->
+          <div class="sessions-section">
+            <div class="section-divider">Kommende treninger</div>
+            <div id="upcoming-sessions"></div>
+          </div>
+
+          <!-- Past sessions -->
+          <div class="sessions-section">
+            <div class="section-divider">Tidligere treninger</div>
+            <div id="past-sessions"></div>
+          </div>
+
+        </div>
+
+        <!-- ── RIGHT: Sidebar ── -->
+        <div class="timeplan-right">
+
+          <!-- Countdown to next session -->
+          <div class="countdown-panel">
+            <div class="side-panel-header" style="display:flex;align-items:center;justify-content:space-between;padding:10px 14px;background:var(--bg3);border-bottom:1px solid var(--border);font-family:'Share Tech Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--text2);">
+              <span style="color:var(--orange);">Neste økt</span>
+              <span>NEDTELLING</span>
+            </div>
+            <div class="countdown-inner" id="countdown-inner">
+              <div class="countdown-none">// Ingen kommende treninger</div>
+            </div>
+          </div>
+
+          <!-- Mini calendar -->
+          <div class="mini-cal">
+            <div class="mini-cal-header">
+              <span class="mini-cal-title" id="cal-month-label">MAI 2025</span>
+              <div class="mini-cal-nav">
+                <button onclick="calPrev()">&#8592;</button>
+                <button onclick="calNext()">&#8594;</button>
+              </div>
+            </div>
+            <div class="cal-grid" id="cal-grid"></div>
+          </div>
+
+        </div>
+
+      </div>
+    </main>
+  </div>
+
+  <script src="../js/data.js"></script>
+  <script src="../js/app.js"></script>
+  <script>
+    /* ══════════════════════════════════════════════════════
+       TIMEPLAN — local logic
+    ══════════════════════════════════════════════════════ */
+
+    const PLAYERS = ['S15T3M', 'Ole', 'propit3', 'G1zdani', 'Birk', 'Mekkis'];
+    const STORAGE_KEY = 'fkb-timeplan-sessions';
+
+    let sessions = [];
+    let calYear, calMonth;
+
+    /* ── Init ── */
+    function initTimeplan() {
+      const saved = localStorage.getItem(STORAGE_KEY);
+      sessions = saved ? JSON.parse(saved) : [];
+
+      // Set default date to today
+      const today = new Date();
+      document.getElementById('input-date').valueAsDate = today;
+
+      // Build player checkboxes
+      const container = document.getElementById('player-checkboxes');
+      PLAYERS.forEach(p => {
+        const label = document.createElement('label');
+        label.className = 'player-cb-label';
+        label.dataset.player = p;
+        label.innerHTML = `<input type="checkbox" value="${p}"> ${p}`;
+        label.addEventListener('click', (e) => {
+          e.preventDefault();
+          label.classList.toggle('checked');
+          label.querySelector('input').checked = label.classList.contains('checked');
+        });
+        container.appendChild(label);
+      });
+
+      // Init calendar
+      calYear  = today.getFullYear();
+      calMonth = today.getMonth();
+      renderCalendar();
+      renderSessions();
+      renderCountdown();
+    }
+
+    /* ── Save ── */
+    function saveSessions() {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(sessions));
+    }
+
+    /* ── Add ── */
+    function addSession() {
+      const title = document.getElementById('input-title').value.trim();
+      const date  = document.getElementById('input-date').value;
+      const time  = document.getElementById('input-time').value;
+      const type  = document.getElementById('input-type').value;
+      const notes = document.getElementById('input-notes').value.trim();
+      const players = [...document.querySelectorAll('.player-cb-label.checked')]
+        .map(l => l.dataset.player);
+
+      if (!title || !date) {
+        document.getElementById('input-title').focus();
+        document.getElementById('input-title').style.borderColor = 'var(--red)';
+        setTimeout(() => document.getElementById('input-title').style.borderColor = '', 1200);
+        return;
+      }
+
+      sessions.push({
+        id: Date.now(),
+        title, date, time, type, notes, players
+      });
+
+      // Sort by date
+      sessions.sort((a, b) => new Date(a.date + ' ' + (a.time || '00:00')) - new Date(b.date + ' ' + (b.time || '00:00')));
+      saveSessions();
+
+      // Reset form
+      document.getElementById('input-title').value = '';
+      document.getElementById('input-notes').value = '';
+      document.getElementById('input-time').value = '';
+      document.querySelectorAll('.player-cb-label').forEach(l => {
+        l.classList.remove('checked');
+        l.querySelector('input').checked = false;
+      });
+
+      renderSessions();
+      renderCountdown();
+      renderCalendar();
+    }
+
+    /* ── Delete ── */
+    function deleteSession(id) {
+      sessions = sessions.filter(s => s.id !== id);
+      saveSessions();
+      renderSessions();
+      renderCountdown();
+      renderCalendar();
+    }
+
+    /* ── Toggle expand ── */
+    function toggleExpand(id) {
+      const card = document.getElementById('sc-' + id);
+      if (card) card.classList.toggle('expanded');
+    }
+
+    /* ── Type badge ── */
+    function typeBadge(type) {
+      const map = {
+        trening:   ['Trening',    'badge-trening'],
+        scrimmage: ['Scrimmage',  'badge-scrimmage'],
+        'møte':    ['Møte',       'badge-møte'],
+        annet:     ['Annet',      'badge-annet'],
+      };
+      const [label, cls] = map[type] || ['Annet', 'badge-annet'];
+      return `<span class="session-type-badge ${cls}">${label}</span>`;
+    }
+
+    /* ── Month names ── */
+    const MONTHS_NO = ['Jan','Feb','Mar','Apr','Mai','Jun','Jul','Aug','Sep','Okt','Nov','Des'];
+    const MONTHS_FULL = ['Januar','Februar','Mars','April','Mai','Juni','Juli','August','September','Oktober','November','Desember'];
+
+    /* ── Render sessions ── */
+    function renderSessions() {
+      const now = new Date();
+      now.setHours(0, 0, 0, 0);
+
+      const upcoming = sessions.filter(s => new Date(s.date) >= now);
+      const past     = sessions.filter(s => new Date(s.date) < now).reverse();
+
+      document.getElementById('upcoming-sessions').innerHTML =
+        upcoming.length ? upcoming.map(sessionCard).join('') :
+        `<div class="empty-state"><div class="empty-icon">📅</div>// Ingen kommende treninger planlagt</div>`;
+
+      document.getElementById('past-sessions').innerHTML =
+        past.length ? past.map(sessionCard).join('') :
+        `<div class="empty-state"><div class="empty-icon">🕐</div>// Ingen tidligere treninger</div>`;
+    }
+
+    function sessionCard(s) {
+      const d = new Date(s.date);
+      const day   = d.getDate();
+      const month = MONTHS_NO[d.getMonth()];
+      const playerTags = s.players.length
+        ? s.players.map(p => {
+            const key = p.toLowerCase().replace(/\d+/g, '');
+            const cls = {s15t3m:'s',ole:'o',propit3:'p',g1zdani:'g',birk:'b',mekkis:'m'}[p.toLowerCase().split(/\d/)[0]] || '';
+            return `<span class="ptag ${cls}">${p.split(/[^a-zA-Z]/)[0]}</span>`;
+          }).join('') : '';
+
+      const hasNotes = s.notes && s.notes.trim();
+      const timeStr  = s.time ? `<span class="session-time">⏱ ${s.time}</span>` : '';
+
+      return `
+        <div class="session-card bracket" id="sc-${s.id}">
+          <div class="session-card-top">
+            <div class="session-date-block">
+              <div class="session-day">${day}</div>
+              <div class="session-month">${month}</div>
+            </div>
+            <div class="session-info" onclick="toggleExpand(${s.id})" style="cursor:pointer;">
+              <div class="session-title">${s.title}</div>
+              <div class="session-meta">
+                ${timeStr}
+                ${typeBadge(s.type)}
+              </div>
+            </div>
+            <div class="session-players">${playerTags}</div>
+            <div class="session-actions">
+              ${hasNotes ? `<button class="btn-icon" onclick="toggleExpand(${s.id})" title="Notater">📋</button>` : ''}
+              <button class="btn-icon del" onclick="deleteSession(${s.id})" title="Slett">✕</button>
+            </div>
+          </div>
+          ${hasNotes ? `<div class="session-card-body">${s.notes}</div>` : ''}
+        </div>`;
+    }
+
+    /* ── Countdown ── */
+    function renderCountdown() {
+      const now = new Date();
+      const upcoming = sessions.filter(s => {
+        const dt = new Date(s.date + (s.time ? 'T' + s.time : 'T00:00'));
+        return dt > now;
+      });
+
+      const container = document.getElementById('countdown-inner');
+      if (!upcoming.length) {
+        container.innerHTML = `<div class="countdown-none">// Ingen kommende treninger</div>`;
+        return;
+      }
+
+      const next = upcoming[0];
+      const dt   = new Date(next.date + (next.time ? 'T' + next.time : 'T00:00'));
+
+      function update() {
+        const diff = dt - new Date();
+        if (diff <= 0) { renderCountdown(); return; }
+        const days  = Math.floor(diff / 86400000);
+        const hours = Math.floor((diff % 86400000) / 3600000);
+        const mins  = Math.floor((diff % 3600000) / 60000);
+        const secs  = Math.floor((diff % 60000) / 1000);
+        container.innerHTML = `
+          <div class="countdown-label">// neste økt om</div>
+          <div class="countdown-next-name">${next.title}</div>
+          <div class="countdown-digits">
+            <div class="cd-block"><div class="cd-num">${String(days).padStart(2,'0')}</div><div class="cd-unit">dager</div></div>
+            <div class="cd-block"><div class="cd-num">${String(hours).padStart(2,'0')}</div><div class="cd-unit">timer</div></div>
+            <div class="cd-block"><div class="cd-num">${String(mins).padStart(2,'0')}</div><div class="cd-unit">min</div></div>
+            <div class="cd-block"><div class="cd-num">${String(secs).padStart(2,'0')}</div><div class="cd-unit">sek</div></div>
+          </div>`;
+      }
+      update();
+      clearInterval(window._cdInterval);
+      window._cdInterval = setInterval(update, 1000);
+    }
+
+    /* ── Mini calendar ── */
+    function renderCalendar() {
+      const today   = new Date();
+      const sessionDates = new Set(sessions.map(s => s.date));
+
+      const label = document.getElementById('cal-month-label');
+      label.textContent = MONTHS_FULL[calMonth].toUpperCase() + ' ' + calYear;
+
+      const grid = document.getElementById('cal-grid');
+      const days = ['Man','Tir','Ons','Tor','Fre','Lør','Søn'];
+      let html = days.map(d => `<div class="cal-day-name">${d}</div>`).join('');
+
+      const firstDay = new Date(calYear, calMonth, 1);
+      let startDow = firstDay.getDay(); // 0=Sun
+      startDow = (startDow === 0 ? 6 : startDow - 1); // Mon=0
+
+      for (let i = 0; i < startDow; i++) html += `<div class="cal-cell empty"></div>`;
+
+      const daysInMonth = new Date(calYear, calMonth + 1, 0).getDate();
+      for (let d = 1; d <= daysInMonth; d++) {
+        const dateStr = `${calYear}-${String(calMonth + 1).padStart(2,'0')}-${String(d).padStart(2,'0')}`;
+        const isToday = (today.getFullYear() === calYear && today.getMonth() === calMonth && today.getDate() === d);
+        const hasSes  = sessionDates.has(dateStr);
+        html += `<div class="cal-cell${isToday ? ' today' : ''}${hasSes ? ' has-session' : ''}">${d}</div>`;
+      }
+
+      grid.innerHTML = html;
+    }
+
+    function calPrev() {
+      calMonth--;
+      if (calMonth < 0) { calMonth = 11; calYear--; }
+      renderCalendar();
+    }
+    function calNext() {
+      calMonth++;
+      if (calMonth > 11) { calMonth = 0; calYear++; }
+      renderCalendar();
+    }
+
+    /* ── Boot ── */
+    document.addEventListener('DOMContentLoaded', () => {
+      // Apply saved theme
+      const theme = localStorage.getItem('fkb-theme');
+      if (theme === 'light') {
+        document.documentElement.classList.add('light');
+        const btn = document.getElementById('theme-toggle');
+        if (btn) btn.textContent = '🌙';
+      }
+      // Clock
+      setInterval(updateClock, 1000);
+      updateClock();
+      // Page
+      initTimeplan();
+    });
+  </script>
+</body>
+</html>
