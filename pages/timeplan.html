@@ -597,6 +597,45 @@
 
     const PLAYERS = ['S15T3M', 'Ole', 'propit3', 'G1zdani', 'Birk', 'Mekkis'];
     const STORAGE_KEY = 'fkb-timeplan-sessions';
+    const DISCORD_WEBHOOK = 'https://discord.com/api/webhooks/1500823665749790881/HrwNoFIngiH0YEADSl6VCL4xG9uYXISrv8b9XfTZ4gVsIwv0Q-kfcc65HAeLtqUc4hML';
+
+    /* ── Send to Discord ── */
+    async function sendDiscordNotification(session) {
+      const typeEmoji = { trening: '🏋️', scrimmage: '⚔️', 'møte': '📋', annet: '📌' };
+      const typeLabel = { trening: 'Trening', scrimmage: 'Scrimmage', 'møte': 'Møte', annet: 'Annet' };
+
+      const d = new Date(session.date);
+      const MONTHS_FULL_NO = ['januar','februar','mars','april','mai','juni','juli','august','september','oktober','november','desember'];
+      const dateStr = `${d.getDate()}. ${MONTHS_FULL_NO[d.getMonth()]} ${d.getFullYear()}`;
+
+      const emoji  = typeEmoji[session.type] || '📌';
+      const label  = typeLabel[session.type] || 'Annet';
+      const time   = session.time ? `\n⏱️  **Tidspunkt:** ${session.time}` : '';
+      const players = session.players.length ? `\n👥  **Spillere:** ${session.players.join(', ')}` : '';
+      const notes  = session.notes ? `\n📝  **Notater:** ${session.notes}` : '';
+
+      const payload = {
+        username: 'FKB Stratbook',
+        avatar_url: 'https://cdn.discordapp.com/embed/avatars/0.png',
+        embeds: [{
+          color: 0xf0901a,
+          title: `${emoji}  ${session.title}`,
+          description: `**Type:** ${label}\n📅  **Dato:** ${dateStr}${time}${players}${notes}`,
+          footer: { text: 'Fjærkrebandittene · FKB Stratbook' },
+          timestamp: new Date().toISOString()
+        }]
+      };
+
+      try {
+        await fetch(DISCORD_WEBHOOK, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+      } catch (e) {
+        console.warn('Discord-varsling feilet:', e);
+      }
+    }
 
     let sessions = [];
     let calYear, calMonth;
@@ -676,6 +715,9 @@
       renderSessions();
       renderCountdown();
       renderCalendar();
+
+      // Send Discord-varsling
+      sendDiscordNotification(sessions.find(s => s.title === title && s.date === date));
     }
 
     /* ── Delete ── */
