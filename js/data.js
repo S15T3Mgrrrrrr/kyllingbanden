@@ -815,7 +815,7 @@ const maps = {
         steps: [
           { text: "Buy: 3x kevlar, 1x smoke + 2x flash, 1x smoke + 1x molly", players: ["Ole", "S15T3M"] },
           { text: "4 players beveger seg carpet og venter på A Main flash", players: ["Ole", "propit3", "Birk", "S15T3M"] },
-          { text: "1 player lurker stairs for window og connector push", players: ["Gizdani"] },
+          { text: "1 player lurker stairs for window og connector push", players: ["G1zdani"] },
           { text: "3 players tar A site, 1 smoker Bigbox, molly Camera, 1 smoker heaven", players: ["Ole", "propit3", "Birk", "S15T3M"] },
           { text: "Plant mot A main", players: [""] },
           { text: "Hold heaven/camera/main — ikke jag kills", players: [""] }
