@@ -1028,7 +1028,7 @@ const KAMPER = {
       scoreUs:   2,
       scoreThem: 1,
       format:    'Bo3',
-      runde:     'Runde 2',
+      runde:     'Runde 4',
       maps: [
         { name: 'Anubis',   result: 'loss', scoreUs: 6, scoreThem: 13 },
         { name: 'Overpass', result: 'win', scoreUs: 13, scoreThem: 7 },
