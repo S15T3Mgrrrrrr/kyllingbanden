@@ -1024,22 +1024,13 @@ const KAMPER = {
 
   kommende: [
     {
-      opponent: 'Ocean Cafe & Bar Gaming',
-      date:     '2026-05-05',
-      time:     '19:00',
-      format:   'Bo3',
-      runde:    'Runde 4',
-      isNext:   true,
-      matchUrl: 'https://www.ggarena.no/competitions/komplettligaen-counter-strike-varen-2026/13835/match/256248',
-    },
-    {
       opponent: 'GAMINGGAMERS',
       date:     '2026-05-07',
       time:     '19:00',
       format:   'Bo3',
       runde:    'Runde 5',
       isNext:   false,
-      matchUrl: null,
+      matchUrl: "https://www.ggarena.no/competitions/komplettligaen-counter-strike-varen-2026/13835/match/256266",
     },
     {
       opponent: '99INONE',
