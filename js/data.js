@@ -950,7 +950,7 @@ const maps = {
         desc:     "Rush B med 5 players på pistol — smoke CT og cross, flash site.",
         steps: [
           { text: "Buy: 3 med kev, 1 med smoke og molly, 1 med smoke og flash", players: ["S15T3M"] },
-          { text: "Alle 5 rusher B tunnels", players: ["Birk", "Mekkis", "propit3", "Ole", "S15T3M"] },
+          { text: "Alle 5 rusher B tunnels", players: ["Birk", "Mekkis", "propit3", "G1zdani", "S15T3M"] },
           { text: "Smoke Doors og Window tidlig", players: ["S15T3M"] },
           { text: "Flash upper tunnels og over inn på siten", players: [""] },
           { text: "Plant default, hold CT og window", players: [""] }
