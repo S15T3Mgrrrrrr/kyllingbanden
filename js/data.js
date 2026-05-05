@@ -708,10 +708,10 @@ const maps = {
         inspired: "",
         desc:     "Ta kontroll over mid-bridge, split Camera og A main.",
         steps: [
-          { text: "3 players tar mid-bridge, smoke window, molly cubby mid", players: ["S15T3M", "Ole", "propit3"] },
+          { text: "3 players tar mid-bridge, smoke window, molly cubby mid", players: ["S15T3M", "Mekkis", "propit3"] },
           { text: "2 players tar A water og holder A main", players: ["Birk", "G1zdani"] },
-          { text: "Pauser mid-round for å catche evt pushes", players: ["S15T3M", "Ole", "propit3", "Birk", "G1zdani"] },
-          { text: "Redirect mid-players inn i Camera og ta A", players: ["S15T3M", "Ole", "propit3"] },
+          { text: "Pauser mid-round for å catche evt pushes", players: ["S15T3M", "Mekkis", "propit3", "Birk", "G1zdani"] },
+          { text: "Redirect mid-players inn i Camera og ta A", players: ["S15T3M", "Mekkis", "propit3"] },
           { text: "A main players tar A main simultant", players: ["Birk", "G1zdani"] },
           { text: "Plant mot A main — hold camera og heaven", players: [""] }
         ],
@@ -730,8 +730,8 @@ const maps = {
         inspired: "",
         desc:     "Push B via water og B main simultant.",
         steps: [
-          { text: "2 players tar water — mot connector", players: ["G1zdani", "propit3"] },
-          { text: "3 players går B main, 1 smoker CT og flasher inn", players: ["S15T3M", "Birk", "Ole"] },
+          { text: "2 players tar water — mot connector", players: ["G1zdani", "Birk"] },
+          { text: "3 players går B main, 1 smoker CT og flasher inn", players: ["S15T3M", "propit3", "Mekkis"] },
           { text: "Flash over siten når players entrer fra water", players: ["S15T3M"] },
           { text: "Push simultant fra B main og Connector", players: ["Ole", "propit3", "S15T3M", "Birk", "G1zdani"] },
           { text: "Plant default B — hold temple exit, connector og CT", players: [""] }
@@ -752,7 +752,7 @@ const maps = {
         desc:     "Tidlig mid-press for å samle info, split CTs mellom mid og site defense.",
         steps: [
           { text: "2 players contester Mid-Bridge", players: ["S15T3M", "propit3"] },
-          { text: "Gjenværende kjører balansert A/B presence", players: ["Birk", "Ole", "G1zdani"] },
+          { text: "Gjenværende kjører balansert A/B presence", players: ["Birk", "Mekkis", "G1zdani"] },
           { text: "Convert mid-kontroll til svakeste site", players: ["S15T3M"] },
           { text: "Default uten utility — pure posisjonelle reads", players: [""] }
         ],
@@ -771,9 +771,9 @@ const maps = {
         inspired: "",
         desc:     "Basically pistol round med våpen.",
         steps: [
-          { text: "Alle 5 går A — bruk carpet istedenfor stairs", players: ["Birk", "G1zdani", "propit3", "Ole", "S15T3M"] },
+          { text: "Alle 5 går A — bruk carpet istedenfor stairs", players: ["Birk", "G1zdani", "propit3", "Mekkis", "S15T3M"] },
           { text: "4 players entry, 1 smoker Bigbox, molly Camera, flasher inn", players: ["S15T3M"] },
-          { text: "Ta kontroll på siten før CT rekker å rotere", players: ["Birk", "G1zdani", "propit3", "Ole"] },
+          { text: "Ta kontroll på siten før CT rekker å rotere", players: ["Birk", "G1zdani", "propit3", "Mekkis"] },
           { text: "Plant mot main med beskyttelse", players: [""] },
           { text: "Smoke player forsvarer A main flank", players: ["S15T3M"] },
           { text: "Hold ruins og connector post-plant", players: [""] }
@@ -793,9 +793,9 @@ const maps = {
         inspired: "",
         desc:     "4 players sitter inne i B main smoke som CT kaster. Kaster de ikke smoke, caller vi av.",
         steps: [
-          { text: "4 players går mot B main og setter seg inn i smoken", players: ["Ole", "propit3", "S15T3M", "Birk"] },
+          { text: "4 players går mot B main og setter seg inn i smoken", players: ["Mekkis", "propit3", "S15T3M", "Birk"] },
           { text: "1 player flasher 2x", players: ["G1zdani"] },
-          { text: "1 sjekker Jail, 1 Pillar/Connector, 2 sjekker CT/Backsite", players: ["Ole", "propit3", "S15T3M", "Birk"] },
+          { text: "1 sjekker Jail, 1 Pillar/Connector, 2 sjekker CT/Backsite", players: ["Mekkis", "propit3", "S15T3M", "Birk"] },
           { text: "Kast smokes når B site er tatt og spill afterplant", players: [""] }
         ],
         utility: [
@@ -813,10 +813,10 @@ const maps = {
         inspired: "",
         desc:     "4-man A contact via carpet. Flash inn A main, Smoke Big box, Molly Camera.",
         steps: [
-          { text: "Buy: 3x kevlar, 1x smoke + 2x flash, 1x smoke + 1x molly", players: ["Ole", "S15T3M"] },
-          { text: "4 players beveger seg carpet og venter på A Main flash", players: ["Ole", "propit3", "Birk", "S15T3M"] },
+          { text: "Buy: 3x kevlar, 1x smoke + 2x flash, 1x smoke + 1x molly", players: ["Mekkis", "S15T3M"] },
+          { text: "4 players beveger seg carpet og venter på A Main flash", players: ["Mekkis", "propit3", "Birk", "S15T3M"] },
           { text: "1 player lurker stairs for window og connector push", players: ["G1zdani"] },
-          { text: "3 players tar A site, 1 smoker Bigbox, molly Camera, 1 smoker heaven", players: ["Ole", "propit3", "Birk", "S15T3M"] },
+          { text: "3 players tar A site, 1 smoker Bigbox, molly Camera, 1 smoker heaven", players: ["Mekkis", "propit3", "Birk", "S15T3M"] },
           { text: "Plant mot A main", players: [""] },
           { text: "Hold heaven/camera/main — ikke jag kills", players: [""] }
         ],
