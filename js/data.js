@@ -1020,6 +1020,22 @@ const KAMPER = {
       ],
       matchUrl: null,
     },
+    {
+      opponent:  'Ocean Cafe & Bar Gaming)',
+      date:      '2026-05-05',
+      time:      '19:00',
+      result:    'win',
+      scoreUs:   2,
+      scoreThem: 1,
+      format:    'Bo3',
+      runde:     'Runde 2',
+      maps: [
+        { name: 'Anubis',   result: 'loss', scoreUs: 6, scoreThem: 13 },
+        { name: 'Overpass', result: 'win', scoreUs: 13, scoreThem: 7 },
+        { name: 'Ancient',  result: 'win',  scoreUs: 13, scoreThem: 11  },
+      ],
+      matchUrl: null,
+    },
   ],
 
   kommende: [
@@ -1095,7 +1111,7 @@ const KARTOVERSIKT = [
    TABELL — 5. divisjon avd. A
    ═══════════════════════════════════════════════════════════ */
 const TABELL = [
-  { pos:1,  name:'Fjærkrebandittene (CS2)',   s:4, w:4, u:0, l:0, diff:'+6', p:9,  us:true  },
+  { pos:1,  name:'Fjærkrebandittene (CS2)',   s:4, w:4, u:0, l:0, diff:'+6', p:12,  us:true  },
   { pos:2,  name:'Ocean Cafe & Bar Gaming',   s:4, w:2, u:0, l:2, diff:'+2', p:6,  us:false },
   { pos:3,  name:'Back Breakers (CS2)',       s:3, w:2, u:0, l:1, diff:'+2', p:6,  us:false },
   { pos:4,  name:'GAMINGGAMERS',              s:3, w:2, u:0, l:1, diff:'0',  p:6,  us:false },
