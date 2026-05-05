@@ -324,16 +324,16 @@ const maps = {
         inspired: "",
         desc:     "Ta outside-kontroll tidlig for å true både A og B (secret).",
         steps: [
-          { text: "Smoke walls og main tidlig", players: ["S15T3M", "Ole", "propit3"] },
+          { text: "Smoke walls og main tidlig", players: ["S15T3M", "propit3"] },
           { text: "3 players tar yard — contest silo og outside", players: ["Birk", "propit3", "Mekkis"] },
-          { text: "2 players tar lobby/ramp kontroll", players: ["S15T3M", "Ole"] },
+          { text: "2 players tar lobby/ramp kontroll", players: ["S15T3M", "G1zdani"] },
           { text: "Outside players går ned og tar secret kontroll", players: ["Birk", "propit3", "Mekkis"] },
-          { text: "Ramp og Outside tar site simultant og planter", players: ["propit3", "S15T3M", "Ole", "Birk", "Mekkis"] }
+          { text: "Ramp og Outside tar site simultant og planter", players: ["propit3", "S15T3M", "G1zdani", "Birk", "Mekkis"] }
         ],
         utility: [
           { name: "Smokes x4", detail: "Walls, Main, Afterplant, Ramp" },
-          { name: "Flash x3", detail: "Secret, lower entry, silo" },
-          { name: "Molotov x2", detail: "Secret, Redboks" }
+          { name: "Flash x3", detail: "Secret, Lower entry, silo" },
+          { name: "Molotov x2", detail: "Secret, Redbox B" }
         ],
       },
 
@@ -345,17 +345,17 @@ const maps = {
         inspired: "",
         desc:     "Press A simultant fra T ramp og gjennom hut.",
         steps: [
-          { text: "1 player committer hardt til T ramp med smoke ramp room", players: ["propit3"] },
-          { text: "3 players går hut, venter på utility, pusher på flash", players: ["Mekkis", "Birk", "Ole"] },
+          { text: "1 player committer hardt til T ramp uten å dø", players: ["G1zdani"] },
+          { text: "3 players går hut, venter på utility, pusher på flash", players: ["Mekkis", "Birk", "propit3"] },
           { text: "Kaster smoke Heaven, Molly top Hut og Flash", players: ["S15T3M"] },
-          { text: "Ramp går når hut players entryer", players: ["Birk", "Ole", "propit3", "Mekkis"] },
+          { text: "Ramp går når hut players entryer", players: ["Birk", "G1zdani", "propit3", "Mekkis"] },
           { text: "Smoke Main og Heaven, plant default A", players: [""] },
           { text: "Hold ramp room + outside post-plant", players: [""] }
         ],
         utility: [
-          { name: "Smokes x3", detail: "Ramp room, Main, Heaven" },
+          { name: "Smokes x3", detail: "Ramp, Main, Heaven" },
           { name: "Molotov x1", detail: "Default A" },
-          { name: "Flash x2", detail: "Ramp, hut peek" }
+          { name: "Flash x2", detail: "Ramp, Hut peek" }
         ],
       },
 
@@ -367,10 +367,10 @@ const maps = {
         inspired: "",
         desc:     "Kaster outside smokes (walls), 1 lurker outside og 4 går mot ramp.",
         steps: [
-          { text: "1 player smoker walls outside, tar yard og outside kontroll", players: ["Ole"] },
-          { text: "4 players contester ramp", players: ["Birk", "propit3", "Mekkis", "S15T3M"] },
-          { text: "Outside prøver på timing main/hell/secret", players: ["Ole"] },
-          { text: "Mid-round call basert på CT-tall", players: ["S15T3M", "propit3"] },
+          { text: "1 player smoker walls outside, tar yard og outside kontroll", players: ["Birk"] },
+          { text: "4 players contester ramp", players: ["S15T3M", "propit3", "Mekkis", "G1zdani"] },
+          { text: "Outside prøver på timing main/hell/secret", players: ["Birk"] },
+          { text: "Mid-round call basert på CT-rotasjoner", players: ["S15T3M", "propit3"] },
           { text: "Execute svakeste site med numbers advantage", players: [""] }
         ],
         utility: [
@@ -388,15 +388,15 @@ const maps = {
         inspired: "",
         desc:     "3 players rusher hut, 1 mollyer top hut og 1 utility singledoor.",
         steps: [
-          { text: "3 players beiner hut — 1 legger smoke", players: ["Birk", "propit3", "Mekkis"] },
-          { text: "1 player kaster HE door, Smoke main og flash bak fakevent", players: ["Ole"] },
+          { text: "3 players beiner hut — 1 legger smoke for molly", players: ["Birk", "propit3", "Mekkis"] },
+          { text: "1 player kaster HE door, Smoke main og flash bak fakevent", players: ["G1zdani"] },
           { text: "1 player mollyer top hut og holder lobby flank", players: ["S15T3M"] },
           { text: "Plant safe og hold afterplant", players: [""] }
         ],
         utility: [
           { name: "Smoke x2", detail: "Molly og Main" },
           { name: "Flash x3", detail: "Fakevent" },
-          { name: "Molotov x1", detail: "Default lower corner" }
+          { name: "Molotov x1", detail: "Top-hut" }
         ],
       },
 
@@ -409,9 +409,9 @@ const maps = {
         desc:     "3 players outside, 2 players lobby/ramp.",
         steps: [
           { text: "3 players går outside, smoker walls, tar kontroll", players: ["propit3", "Birk", "Mekkis"] },
-          { text: "2 players tar lobby og radio kontroll", players: ["Ole", "S15T3M"] },
-          { text: "Spiller runden på info", players: ["propit3", "Birk", "Mekkis"] },
-          { text: "Committer mot den svakere siten", players: ["S15T3M", "propit3"] }
+          { text: "2 players tar lobby og radio kontroll", players: ["G1zdani", "S15T3M"] },
+          { text: "Spill runden på info", players: ["propit3", "Birk", "Mekkis", "S15T3M", "Gizdani"] },
+          { text: "Committer mot den svakere siten", players: [""] }
         ],
         utility: [
           { name: "Smokes x2", detail: "Outside, Main" },
@@ -428,10 +428,10 @@ const maps = {
         inspired: "Finland SPESIAL",
         desc:     "Alle 5 beiner ramp. Dreper vi ramp går vi ned, dropper han går vi heaven.",
         steps: [
-          { text: "3x kevlar, 1x smoke+2x flash, 1x molly", players: ["S15T3M", "Ole"] },
-          { text: "5 players pusher ramp — hopper rundt hjørner med hodet ned", players: ["Ole", "propit3", "S15T3M", "Mekkis", "Birk"] },
-          { text: "Dreper vi Ramp: ned. Dropper han: Heaven", players: ["S15T3M"] },
-          { text: "Plant og spill smart i afterplant", players: ["S15T3M"] }
+          { text: "4 med kevlar, 1 med smoke + molly", players: ["S15T3M"] },
+          { text: "5 players pusher ramp — første man hopper ut med hodet ned", players: ["G1zdani", "propit3", "S15T3M", "Mekkis", "Birk"] },
+          { text: "Dreper vi Ramp går vi ned. Dropper han ned går vi Heaven", players: [""] },
+          { text: "Plant og spill smart i afterplant", players: [""] }
         ],
         utility: [
           { name: "Smoke x1", detail: "Hell/Main" },
@@ -458,13 +458,13 @@ const maps = {
         inspired: "",
         desc:     "Beine monster som et reint helvete.",
         steps: [
-          { text: "4 players pusher monster fort", players: ["Ole", "propit3", "S15T3M", "Birk", "Mekkis"] },
-          { text: "1 player gir water-flash x2 og går short", players: ["Ole", "propit3", "S15T3M", "Birk", "Mekkis"] },
+          { text: "4 players pusher monster fort", players: ["G1zdani", "propit3", "S15T3M", "Birk", "Mekkis"] },
+          { text: "1 player gir water-flash x2 og går short (bakerste mann)", players: ["G1zdani", "propit3", "S15T3M", "Birk", "Mekkis"] },
           { text: "Plant safe — hold B short og CT post-plant", players: [""] }
         ],
         utility: [
           { name: "Smokes x3", detail: "Short, Heaven, Bridge" },
-          { name: "Flash x3", detail: "B short, site" },
+          { name: "Flash x3", detail: "B short, Site" },
           { name: "Molotov x1", detail: "Toxic" }
         ],
       },
@@ -477,11 +477,11 @@ const maps = {
         inspired: "",
         desc:     "Split A via long og A Banana simultant.",
         steps: [
-          { text: "2 players pusher long aggressivt", players: ["S15T3M", "propit3"] },
-          { text: "2 players tar toilets og gjør klar Bank og Dumster smoke", players: ["Ole", "Birk"] },
-          { text: "1 player lurker B short/monster — ikke dø!", players: ["Mekkis"] },
-          { text: "Short players smoker Bank og Dumster, long molly truck — simultant", players: ["S15T3M", "propit3", "Ole", "Birk"] },
-          { text: "Flash inn — plant default eller heaven-side", players: [""] }
+          { text: "2 players pusher long aggressivt", players: ["S15T3M", "Mekkis"] },
+          { text: "2 players tar toilets og gjør klar Bank og Dumster smoke", players: ["propit3", "Birk"] },
+          { text: "1 player lurker B short/monster/con — ikke dø!", players: ["G1zdani"] },
+          { text: "Short players smoker Bank og Dumster, long molly truck — simultant", players: ["S15T3M", "Mekkis", "propit3", "Birk"] },
+          { text: "Flash inn — plant default", players: [""] }
         ],
         utility: [
           { name: "Smokes x3", detail: "Bank, Dumster, Toilets" },
@@ -498,14 +498,14 @@ const maps = {
         inspired: "",
         desc:     "Ta mid/fountain, connector og B short kontroll.",
         steps: [
-          { text: "2 players tar short — holder passivt", players: ["propit3", "Ole"] },
-          { text: "1 player tar connector kontroll", players: ["S15T3M"] },
+          { text: "2 players tar short — holder passivt", players: ["propit3", "S15T3M"] },
+          { text: "1 player tar connector kontroll", players: ["G1zdani"] },
           { text: "2 players tar mid/fountain kontroll", players: ["Birk", "Mekkis"] },
-          { text: "Les CT-posisjoner — roter mot svakeste side", players: ["S15T3M", "Ole", "propit3", "Mekkis", "Birk"] },
-          { text: "Late execute med smokes", players: ["S15T3M", "propit3", "Ole"] }
+          { text: "Les CT-posisjoner — roter mot svakeste side", players: ["S15T3M", "G1zdani", "propit3", "Mekkis", "Birk"] },
+          { text: "Late execute med smokes", players: ["S15T3M", "propit3"] }
         ],
         utility: [
-          { name: "Smoke x2", detail: "CT, short site" },
+          { name: "Smoke x2", detail: "CT, Short site" },
           { name: "Flash x2", detail: "Short, mid/long" },
           { name: "Molotov x1", detail: "Reactive use" }
         ],
@@ -519,8 +519,8 @@ const maps = {
         inspired: "",
         desc:     "Commit 2 players til B monster-press med utility, avled til A long.",
         steps: [
-          { text: "2 players smoker og flasher B aggressivt — maks støy", players: ["Ole", "S15T3M"] },
-          { text: "1 player blir igjen B, den andre regrouper på A", players: ["Ole", "S15T3M"] },
+          { text: "2 players smoker og flasher B aggressivt — maks støy", players: ["G1zdani", "S15T3M"] },
+          { text: "1 player blir igjen B, den andre regrouper på A", players: ["G1zdani", "S15T3M"] },
           { text: "3 players pusher A long stille", players: ["Birk", "Mekkis", "propit3"] },
           { text: "Når B CT roterer — execute A med Bank/Dumster smokes", players: ["Birk", "Mekkis", "propit3"] },
           { text: "Plant for Banana og hold", players: [""] }
@@ -540,10 +540,10 @@ const maps = {
         inspired: "",
         desc:     "Rush B via monster med rask smoke på short.",
         steps: [
-          { text: "3x kevlar, 1x smoke+1x molly, 1x 2x flash", players: ["Birk", "Mekkis", "propit3", "Ole", "S15T3M"] },
-          { text: "4 rusher monster, 1 flashes 2x og går short", players: ["Birk", "Mekkis", "propit3", "Ole", "S15T3M"] },
+          { text: "3 med kevlar, 1 med 1x smoke+1x molly, 1 med 2x flash", players: ["Birk", "Mekkis", "propit3", "G1zdani", "S15T3M"] },
+          { text: "4 rusher monster, 1 flashes 2x og går short", players: ["Birk", "Mekkis", "propit3", "G1zdani", "S15T3M"] },
           { text: "Smoke short umiddelbart ute av monster", players: ["S15T3M"] },
-          { text: "Ta site og plant fort", players: ["Birk", "Mekkis", "propit3", "Ole", "S15T3M"] },
+          { text: "Ta site og plant fort", players: ["Birk", "Mekkis", "propit3", "G1zdani", "S15T3M"] },
           { text: "Hold short og CT wall — ikke over-peek", players: [""] }
         ],
         utility: [
@@ -846,15 +846,15 @@ const maps = {
         inspired: "Falcons og FURIA",
         desc:     "Gode spawns: rush B alle mann.",
         steps: [
-          { text: "Alle 5 beiner B tunnels", players: ["Birk", "Mekkis", "propit3", "Ole", "S15T3M"] },
+          { text: "Alle 5 beiner B tunnels", players: ["Birk", "Mekkis", "propit3", "G1zdani", "S15T3M"] },
           { text: "1 smoker Door og Window", players: ["S15T3M", "propit3"] },
-          { text: "Flash inn i lower tunnels, flash over B site", players: ["Birk", "Mekkis", "propit3", "Ole"] },
+          { text: "Flash inn i lower tunnels, flash over B site", players: ["Birk", "Mekkis", "propit3", "G1zdani"] },
           { text: "Flood site og plant default bak bokser", players: [""] },
           { text: "Hold window og CT post-plant — ikke jag", players: [""] }
         ],
         utility: [
           { name: "Smokes x2", detail: "Door, Window" },
-          { name: "Flash x3", detail: "Tunnels, site x2" }
+          { name: "Flash x3", detail: "Tunnels, Site x2" }
         ],
       },
 
@@ -866,11 +866,11 @@ const maps = {
         inspired: "",
         desc:     "Vinn long-kontroll og execute A med smokes på CT, short og catwalk.",
         steps: [
-          { text: "2 players fighter for long med flash og evt smoke long corner", players: ["propit3", "Ole", "Mekkis", "Birk"] },
-          { text: "2 players tar mid/short kontroll, smoke Xbox", players: ["propit3", "Ole", "Mekkis", "Birk"] },
-          { text: "1 player lurker B tunnels og møter mid players", players: ["S15T3M"] },
-          { text: "Smoke walkway short og walk bak smoken", players: ["propit3", "Ole", "Mekkis", "Birk", "S15T3M"] },
-          { text: "Long simultant med short push", players: [""] },
+          { text: "2 players fighter for long med flash og evt smoke long corner", players: ["propit3", "S15T3M", "Mekkis", "Birk"] },
+          { text: "2 players tar mid/short kontroll, smoke Xbox/Short", players: ["propit3", "S15T3M", "Mekkis", "Birk"] },
+          { text: "1 player lurker B tunnels og møter mid players", players: ["Gizdani"] },
+          { text: "Smoke walkway short og walk bak smoken, peek på flash", players: ["propit3", "G1zdani", "Mekkis", "Birk", "S15T3M"] },
+          { text: "Long går simultant med short push", players: [""] },
           { text: "Plant short og hold afterplant", players: [""] }
         ],
         utility: [
@@ -888,10 +888,10 @@ const maps = {
         inspired: "",
         desc:     "Ta mid via Xbox, smoke CT cross, og splitt fra Mid og B tunnels.",
         steps: [
-          { text: "Smoke Xbox — 3 players tar mid-kontroll", players: ["S15T3M", "Birk", "Mekkis"] },
-          { text: "2 players sitter B tunnels og holder", players: ["Ole", "propit3"] },
-          { text: "Smoke CT cross, flash doors, push mid til B", players: ["S15T3M", "Birk", "Mekkis"] },
-          { text: "B tunnels pusher simultant med mid players", players: ["Ole", "propit3"] },
+          { text: "Smoke Xbox — 3 players tar mid-kontroll", players: ["S15T3M", "Birk", "propit3"] },
+          { text: "2 players sitter B tunnels og holder", players: ["G1zdani", "Mekkis"] },
+          { text: "Smoke CT cross, flash doors, push mid til B", players: ["S15T3M", "Birk", "propit3"] },
+          { text: "B tunnels pusher simultant med mid players", players: ["G1zdani", "Mekkis"] },
           { text: "Plant default — hold CT, Window og Tunnels", players: [""] }
         ],
         utility: [
@@ -908,9 +908,9 @@ const maps = {
         inspired: "",
         desc:     "Spre laget for info — 2 long, 1 mid, 2 B tunnels. Passivt og late-round call.",
         steps: [
-          { text: "2 players prober long — ikke peek uten gunstig situasjon", players: [""] },
-          { text: "1 player tar mid (xbox-area) for informasjon", players: [""] },
-          { text: "2 players holder B tunnels passivt", players: [""] },
+          { text: "1 player går long — ikke peek uten gunstig situasjon", players: [""] },
+          { text: "2 players tar mid (xbox-area) for informasjon", players: [""] },
+          { text: "2 players holder B tunnels/lower passivt", players: [""] },
           { text: "Samle informasjon fra alle 3 sonene", players: ["S15T3M"] },
           { text: "Late-round: execute med numbers-fordel på svakeste side", players: ["S15T3M", "propit3"] }
         ],
@@ -949,10 +949,10 @@ const maps = {
         inspired: "Standard pro meta",
         desc:     "Rush B med 5 players på pistol — smoke CT og cross, flash site.",
         steps: [
-          { text: "Buy: 3x kevlar, 2x smoke + 3x flash", players: ["Ole", "S15T3M"] },
+          { text: "Buy: 3 med kev, 1 med smoke og molly, 1 med smoke og flash", players: ["S15T3M"] },
           { text: "Alle 5 rusher B tunnels", players: ["Birk", "Mekkis", "propit3", "Ole", "S15T3M"] },
           { text: "Smoke Doors og Window tidlig", players: ["S15T3M"] },
-          { text: "Flash upper tunnels og over inn på siten", players: ["Ole"] },
+          { text: "Flash upper tunnels og over inn på siten", players: [""] },
           { text: "Plant default, hold CT og window", players: [""] }
         ],
         utility: [
