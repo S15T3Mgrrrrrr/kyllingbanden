@@ -1067,14 +1067,14 @@ const KAMPER = {
    Oppdater etter hver kamp
    ═══════════════════════════════════════════════════════════ */
 const SPILLERSTATS = {
-  kamp: 'vs Klompeklattane — 30. apr 2026',
-  resultat: 'Seier 2–1 (Anubis 10–13 · Nuke 13–10 · Ancient 13–6)',
+  kamp: 'vs Ocean Cafe & Bar Gaming — 05. mai 2026',
+  resultat: 'Seier 2–1 (Anubis 6–13 · Overpass 13–7 · Ancient 13–11)',
   spillere: [
-    { name: 'S15T3M',    k: 60, a: 11, d: 43, adr: 89,  r: 1.26 },
-    { name: 'propit3',   k: 52, a: 15, d: 45, adr: 92,  r: 1.07 },
-    { name: 'MEKKISSSS', k: 46, a: 13, d: 41, adr: 76,  r: 1.07 },
-    { name: 'G1zdani',   k: 46, a: 7,  d: 40, adr: 71,  r: 1.12 },
-    { name: 'Olelelele', k: 30, a: 18, d: 49, adr: 64,  r: 0.64 },
+    { name: 'propit3',     k: 56, a: 14, d: 40, adr: 98,  r: 1.29 },
+    { name: 'Bjarkebille', k: 52, a: 12, d: 45, adr: 82,  r: 1.19 },
+    { name: 'S15T3M',      k: 45, a: 13, d: 44, adr: 79,  r: 0.97 },
+    { name: 'G1zdani',     k: 40, a: 16,  d: 47, adr: 68,  r: 0.93 },
+    { name: 'MEKKISSSS',   k: 36, a: 10, d: 43, adr: 65,  r: 0.84 },
   ],
 };
 
@@ -1082,27 +1082,27 @@ const SPILLERSTATS = {
    KARTOVERSIKT — oppdater etter screenshot
    ═══════════════════════════════════════════════════════════ */
 const KARTOVERSIKT = [
-  { name:'Ancient',  pct:100, w:2, l:0, total:2, diff:'+12', valgt:0, vraket:0 },
-  { name:'Overpass', pct:100, w:1, l:0, total:1, diff:'+7',  valgt:1, vraket:0 },
+  { name:'Ancient',  pct:100, w:3, l:0, total:3, diff:'+13', valgt:0, vraket:0 },
+  { name:'Overpass', pct:100, w:2, l:0, total:2, diff:'13',  valgt:2, vraket:0 },
   { name:'Nuke',     pct:100, w:2, l:0, total:2, diff:'+13', valgt:1, vraket:0 },
-  { name:'Anubis',   pct:50,  w:1, l:1, total:2, diff:'+2',  valgt:1, vraket:0 },
+  { name:'Anubis',   pct:33,  w:1, l:2, total:3, diff:'-5',  valgt:1, vraket:0 },
   { name:'Dust II',  pct:0,   w:0, l:0, total:0, diff:'0',   valgt:0, vraket:2 },
   { name:'Inferno',  pct:0,   w:0, l:0, total:0, diff:'0',   valgt:0, vraket:2 },
-  { name:'Mirage',   pct:null, w:0, l:0, total:0, diff:'0',  valgt:0, vraket:0 },
+  { name:'Mirage',   pct:0,   w:0, l:0, total:0, diff:'0',  valgt:0, vraket:0 },
 ];
 
 /* ═══════════════════════════════════════════════════════════
    TABELL — 5. divisjon avd. A
    ═══════════════════════════════════════════════════════════ */
 const TABELL = [
-  { pos:1,  name:'Fjærkrebandittene (CS2)',   s:3, w:3, u:0, l:0, diff:'+5', p:9,  us:true  },
-  { pos:2,  name:'Ocean Cafe & Bar Gaming',   s:3, w:2, u:0, l:1, diff:'+3', p:6,  us:false },
+  { pos:1,  name:'Fjærkrebandittene (CS2)',   s:4, w:4, u:0, l:0, diff:'+6', p:9,  us:true  },
+  { pos:2,  name:'Ocean Cafe & Bar Gaming',   s:4, w:2, u:0, l:2, diff:'+2', p:6,  us:false },
   { pos:3,  name:'Back Breakers (CS2)',       s:3, w:2, u:0, l:1, diff:'+2', p:6,  us:false },
   { pos:4,  name:'GAMINGGAMERS',              s:3, w:2, u:0, l:1, diff:'0',  p:6,  us:false },
   { pos:5,  name:'VorteX (CS2)',              s:2, w:1, u:0, l:1, diff:'+1', p:3,  us:false },
   { pos:6,  name:'Klompeklattane',            s:3, w:1, u:0, l:2, diff:'-1', p:3,  us:false },
   { pos:7,  name:'99INONE',                   s:3, w:1, u:0, l:2, diff:'-2', p:3,  us:false },
-  { pos:8,  name:'Gatemix E-Sport (CS2)',     s:2, w:0, u:0, l:2, diff:'-4', p:0,  us:false },
-  { pos:8,  name:'IL Hei E-sport MainBoys',   s:2, w:0, u:0, l:2, diff:'-4', p:0,  us:false },
+  { pos:8,  name:'IL Hei E-sport MainBoys',   s:3, w:1, u:0, l:2, diff:'-2', p:0,  us:false },
+  { pos:8,  name:'Gatemix E-Sport (CS2)',     s:3, w:0, u:0, l:3, diff:'-6', p:0,  us:false },
   { pos:10, name:'Wen Hua 28a [Trukket]',     s:0, w:0, u:0, l:0, diff:'0',  p:0,  us:false, withdrawn:true },
 ];
