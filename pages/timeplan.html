@@ -597,7 +597,7 @@
 
     const PLAYERS = ['S15T3M', 'Ole', 'propit3', 'G1zdani', 'Birk', 'Mekkis'];
     const STORAGE_KEY = 'fkb-timeplan-sessions';
-    const DISCORD_WEBHOOK = 'https://discord.com/api/webhooks/1500823665749790881/HrwNoFIngiH0YEADSl6VCL4xG9uYXISrv8b9XfTZ4gVsIwv0Q-kfcc65HAeLtqUc4hML';
+    const DISCORD_WEBHOOK = 'https://discord.com/api/webhooks/1501499268681433100/Cjuk8OhBG1WLwvp_XyNAPgKyGHhnsRtmOn7Fo-uMCJtA5Rhxahk1Q4m1Em9WxmABDbyZ';
 
     /* ── Send to Discord ── */
     async function sendDiscordNotification(session) {
@@ -944,6 +944,35 @@
       document.getElementById('lineup-warning').style.display = 'none';
       localStorage.setItem(LINEUP_KEY, JSON.stringify({ starters, reserve }));
       showLineup(starters, reserve);
+      sendLineupToDiscord(starters, reserve);
+    }
+
+    async function sendLineupToDiscord(starters, reserve) {
+      const roleMap = { S15T3M:'IGL / AWP', Ole:'Support / Rifler', propit3:'Entry / Support', G1zdani:'Lurk / Anchor', Birk:'Entry / Rifler', Mekkis:'Entry / Rifler' };
+      const playerLines = starters.map(p => `• **${p}** — ${roleMap[p] || ''}`).join('\n');
+      const reserveLine = reserve ? `\n🪑  **Reserve:** ${reserve}` : '';
+
+      const payload = {
+        username: 'FKB Stratbook',
+        avatar_url: 'https://cdn.discordapp.com/embed/avatars/0.png',
+        embeds: [{
+          color: 0xf0901a,
+          title: '⚔️  Lagoppstilling oppdatert',
+          description: `**Starters:**\n${playerLines}${reserveLine}`,
+          footer: { text: 'Fjærkrebandittene · FKB Stratbook' },
+          timestamp: new Date().toISOString()
+        }]
+      };
+
+      try {
+        await fetch(DISCORD_WEBHOOK, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+      } catch (e) {
+        console.warn('Discord-varsling feilet:', e);
+      }
     }
 
     function showLineup(starters, reserve) {
