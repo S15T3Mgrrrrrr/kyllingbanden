@@ -573,8 +573,8 @@ const maps = {
         desc:     "Ta mid og cave-kontroll, swing B fra to retninger.",
         steps: [
           { text: "2 players pusher mid — smoke redroom, flash top mid", players: ["Birk", "propit3"] },
-          { text: "1 player pusher cave fra T side med flash", players: ["Ole"] },
-          { text: "Smoke Long og Short — commit B når cave er vunnet", players: ["Ole", "propit3"] },
+          { text: "1 player pusher cave fra T side med flash", players: [""] },
+          { text: "Smoke Long og Short — commit B når cave er vunnet", players: ["S15T3M", "propit3"] },
           { text: "Mid player blir med B ved entry", players: ["Birk"] },
           { text: "Entry gjennom ramp eller cave simultant", players: [""] },
           { text: "Plant default — hold cave og CT angles", players: [""] }
@@ -594,8 +594,8 @@ const maps = {
         inspired: "",
         desc:     "Execute A via ruins og short/temple simultant.",
         steps: [
-          { text: "3 players går mid, 2 players via main", players: ["Birk", "G1zdani", "Ole", "S15T3M", "propit3"] },
-          { text: "Smoke redroom, donut, ta mid kontroll", players: ["propit3", "Ole", "Birk"] },
+          { text: "3 players går mid, 2 players via main", players: ["Birk", "G1zdani", "Mekkis", "S15T3M", "propit3"] },
+          { text: "Smoke redroom, donut, ta mid kontroll", players: ["propit3", "Mekkis", "Birk"] },
           { text: "Smoke CT, Temple, Molly broky", players: ["G1zdani", "S15T3M"] },
           { text: "Ta donut med molly og flash", players: ["Birk", "propit3"] },
           { text: "Tar siten simultant fra A main og Donut", players: [""] },
@@ -616,11 +616,11 @@ const maps = {
         inspired: "",
         desc:     "Langsom default med cave og mid-kontroll prioritert.",
         steps: [
-          { text: "2 players går back B — ramp og cave kontroll", players: ["Ole", "S15T3M"] },
-          { text: "2 players går elbow til mid", players: ["Birk", "propit3"] },
+          { text: "2 players går back B — ramp og cave kontroll", players: ["Mekkis", "propit3"] },
+          { text: "2 players går elbow til mid", players: ["Birk", "S15T3M"] },
           { text: "1 player lurker A main for info", players: ["Gizdani"] },
           { text: "Samle CT-rotasjoner mid-round", players: ["S15T3M"] },
-          { text: "Commit til site med færrest", players: ["S15T3M", "Ole", "Birk", "propit3", "G1zdani"] }
+          { text: "Commit til site med færrest", players: ["S15T3M", "Mekkis", "Birk", "propit3", "G1zdani"] }
         ],
         utility: [
           { name: "Smoke x2", detail: "Redroom, Donut" },
@@ -637,8 +637,8 @@ const maps = {
         inspired: "",
         desc:     "Speed-run til B gjennom cave/ramp med alle 5.",
         steps: [
-          { text: "Alle 5 beiner cave/ramp ved start", players: ["Birk", "G1zdani", "propit3", "Ole", "S15T3M"] },
-          { text: "1 smoker Long, en annen flasher B entrance", players: ["Ole", "S15T3M"] },
+          { text: "Alle 5 beiner cave/ramp ved start", players: ["Birk", "G1zdani", "propit3", "Mekkis", "S15T3M"] },
+          { text: "1 smoker Long, en annen flasher B entrance", players: ["propit3", "S15T3M"] },
           { text: "Entry frag ut cave/ramp simultant", players: ["Birk", "propit3", "G1zdani", "S15T3M"] },
           { text: "Flood site — plant default eller cave-side", players: [""] },
           { text: "2 holder cave bak, 1 mid entrance", players: [""] }
@@ -657,11 +657,11 @@ const maps = {
         inspired: "",
         desc:     "Tving 2 players til å kaste all A-utility, redirect gjennom mid inn i B.",
         steps: [
-          { text: "2 players committer main-push — smoke, flash, molotov", players: ["Ole", "propit3"] },
-          { text: "Lag støy og press i 10-12 sekunder", players: ["Ole", "propit3"] },
-          { text: "2 lurks kontester stille mid under faken", players: ["G1zdani", "S15T3M"] },
+          { text: "2 players committer main-push — smoke, flash, molotov", players: ["G1zdani", "propit3"] },
+          { text: "Lag støy og press i 10-12 sekunder", players: ["G1zdani", "propit3"] },
+          { text: "2 lurks kontester stille mid under faken", players: ["Birk", "S15T3M"] },
           { text: "Når CT rotasjon bekreftet — call rotate til B", players: ["S15T3M"] },
-          { text: "Alle 5 konverter på B fra cave + mid simultant", players: ["Birk", "G1zdani", "propit3", "Ole", "S15T3M"] }
+          { text: "Alle 5 konverter på B fra cave + mid simultant", players: ["Birk", "G1zdani", "propit3", "Mekkis", "S15T3M"] }
         ],
         utility: [
           { name: "Smokes x3", detail: "CT fake + B CT, Elbow" },
@@ -678,7 +678,7 @@ const maps = {
         inspired: "",
         desc:     "4 Spillere pusher elbow til donut og A, 1 går A main.",
         steps: [
-          { text: "4 players rusher donut — send 1 til main for A anchor", players: ["Birk", "propit3", "Ole", "S15T3M", "G1zdani"] },
+          { text: "4 players rusher donut — send 1 til main for A anchor", players: ["Birk", "propit3", "Mekkis", "S15T3M", "G1zdani"] },
           { text: "Kaster insta smoke Redroom, flasher mid", players: ["S15T3M"] },
           { text: "Flood site og plant short-side/default", players: [""] },
           { text: "Spiller afterplant fra Donut og A main", players: [""] }
