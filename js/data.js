@@ -1052,18 +1052,24 @@ const KAMPER = {
       ],
       matchUrl: null,
     },
+    {
+      opponent:  '99INONE',
+      date:      '2026-05-15',
+      time:      '19:00',
+      result:    'win',
+      scoreUs:   2,
+      scoreThem: 0,
+      format:    'Bo3',
+      runde:     'Runde 6',
+      maps: [
+        { name: 'Dust 2',  result: 'win',   scoreUs: 13, scoreThem: 9 },
+        { name: 'Nuke',    result: 'win',   scoreUs: 13, scoreThem: 11 },
+      ],
+      matchUrl: null,
+    },
   ],
 
   kommende: [
-    {
-      opponent: '99INONE',
-      date:     '2026-05-14',
-      time:     '19:00',
-      format:   'Bo3',
-      runde:    'Runde 6',
-      isNext:   false,
-      matchUrl: "https://www.ggarena.no/competitions/komplettligaen-counter-strike-varen-2026/13835/match/256293",
-    },
     {
       opponent: 'Back Breakers (CS2)',
       date:     '2026-05-21',
@@ -1071,7 +1077,7 @@ const KAMPER = {
       format:   'Bo3',
       runde:    'Runde 7',
       isNext:   false,
-      matchUrl: null,
+      matchUrl: "https://www.ggarena.no/competitions/komplettligaen-counter-strike-varen-2026/13835/match/256319",
     },
     {
       opponent: 'VorteX (CS2)',
@@ -1093,11 +1099,11 @@ const SPILLERSTATS = {
   kamp: 'vs Gaminggamers — 07. mai 2026',
   resultat: 'Tap 2–1 (Nuke 13–7 · Overpass 7-13 · Ancient 6–13)',
   spillere: [
-    { name: 'G1zdani',     k: 41, a: 11,  d: 41, adr: 69,  r: 0.98 },
-    { name: 'Bjarkebille', k: 45, a: 15,  d: 51, adr: 82,  r: 0.97 },
-    { name: 'S15T3M',      k: 38, a: 12,  d: 43, adr: 69,  r: 0.92 },
-    { name: 'MEKKISSSS',   k: 36, a: 14,  d: 42, adr: 64,  r: 0.91 },
-    { name: 'propit3',     k: 34, a: 14,  d: 44, adr: 70,  r: 0.82 },
+    { name: 'MEKKISSSS',    k: 43, a: 3,   d: 25, adr: 69,  r: 0.98 },
+    { name: 'propit3',      k: 37, a: 12,  d: 33, adr: 82,  r: 0.97 },
+    { name: 'Olelele',      k: 32, a: 14,  d: 30, adr: 69,  r: 0.92 },
+    { name: 'Bjarkebille',  k: 36, a: 11,  d: 38, adr: 64,  r: 0.91 },
+    { name: 'G1zdani',      k: 25, a: 3,   d: 30, adr: 70,  r: 0.82 },
   ],
 };
 
@@ -1107,25 +1113,25 @@ const SPILLERSTATS = {
 const KARTOVERSIKT = [
   { name:'Ancient',  pct:75,  w:3, l:1, total:4, diff:'+7',   valgt:0, vraket:0 },
   { name:'Overpass', pct:100, w:2, l:0, total:2, diff:'13',   valgt:2, vraket:0 },
-  { name:'Nuke',     pct:100, w:3, l:0, total:3, diff:'+19',  valgt:3, vraket:0 },
+  { name:'Nuke',     pct:100, w:4, l:0, total:4, diff:'+21',  valgt:4, vraket:0 },
   { name:'Anubis',   pct:25,  w:1, l:3, total:4, diff:'-11',  valgt:0, vraket:0 },
-  { name:'Dust II',  pct:0,   w:0, l:0, total:0, diff:'0',    valgt:0, vraket:3 },
-  { name:'Inferno',  pct:0,   w:0, l:0, total:0, diff:'0',    valgt:0, vraket:5 },
-  { name:'Mirage',   pct:0,   w:0, l:0, total:0, diff:'0',    valgt:0, vraket:2 },
+  { name:'Dust II',  pct:100, w:1, l:0, total:1, diff:'+4',    valgt:0, vraket:3 },
+  { name:'Inferno',  pct:0,   w:0, l:0, total:0, diff:'0',    valgt:0, vraket:6 },
+  { name:'Mirage',   pct:0,   w:0, l:0, total:0, diff:'0',    valgt:0, vraket:3 },
 ];
 
 /* ═══════════════════════════════════════════════════════════
    TABELL — 5. divisjon avd. A
    ═══════════════════════════════════════════════════════════ */
 const TABELL = [
-  { pos:1,  name:'Fjærkrebandittene (CS2)',   s:5, w:4, u:0, l:1, diff:'+5', p:12,  us:true  },
-  { pos:2,  name:'Back Breakers (CS2)',       s:5, w:4, u:0, l:1, diff:'+4', p:12,  us:false }, 
-  { pos:3,  name:'VorteX (CS2)',              s:4, w:3, u:0, l:1, diff:'+4', p:9,  us:false },
+  { pos:1,  name:'Fjærkrebandittene (CS2)',   s:6, w:5, u:0, l:1, diff:'+7', p:15,  us:true  },
+  { pos:2,  name:'Back Breakers (CS2)',       s:6, w:5, u:0, l:1, diff:'+5', p:15,  us:false }, 
+  { pos:3,  name:'VorteX (CS2)',              s:5, w:3, u:0, l:2, diff:'+3', p:9,  us:false },
   { pos:4,  name:'GAMINGGAMERS',              s:5, w:3, u:0, l:2, diff:'0',  p:9,  us:false }, 
-  { pos:5,  name:'Ocean Cafe & Bar Gaming',   s:4, w:2, u:0, l:2, diff:'+2', p:6,  us:false },
+  { pos:5,  name:'Ocean Cafe & Bar Gaming',   s:5, w:2, u:0, l:3, diff:'+1', p:6,  us:false },
   { pos:6,  name:'Klompeklattane',            s:4, w:2, u:0, l:2, diff:'+1', p:6,  us:false },
-  { pos:7,  name:'99INONE',                   s:5, w:1, u:0, l:4, diff:'-4', p:3,  us:false }, 
-  { pos:8,  name:'IL Hei E-sport',            s:4, w:1, u:0, l:3, diff:'-4', p:3,  us:false },
+  { pos:7,  name:'IL Hei E-sport',            s:5, w:2, u:0, l:3, diff:'-3', p:6,  us:false }, 
+  { pos:8,  name:"99INONE",                   s:6, w:1, u:0, l:5, diff:'-6', p:3,  us:false },
   { pos:8,  name:'Gatemix E-Sport (CS2)',     s:4, w:0, u:0, l:4, diff:'-8', p:0,  us:false },
   { pos:10, name:'Wen Hua 28a [Trukket]',     s:0, w:0, u:0, l:0, diff:'0',  p:0,  us:false, withdrawn:true },
 ];
