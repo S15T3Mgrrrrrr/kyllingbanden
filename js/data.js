@@ -1096,14 +1096,14 @@ const KAMPER = {
    Oppdater etter hver kamp
    ═══════════════════════════════════════════════════════════ */
 const SPILLERSTATS = {
-  kamp: 'vs Gaminggamers — 07. mai 2026',
-  resultat: 'Tap 2–1 (Nuke 13–7 · Overpass 7-13 · Ancient 6–13)',
+  kamp: 'vs 99INONE — 14. mai 2026',
+  resultat: 'Win 2–1 (Dust 2 13–9 · Nuke 13-11)',
   spillere: [
-    { name: 'MEKKISSSS',    k: 43, a: 3,   d: 25, adr: 69,  r: 0.98 },
-    { name: 'propit3',      k: 37, a: 12,  d: 33, adr: 82,  r: 0.97 },
-    { name: 'Olelele',      k: 32, a: 14,  d: 30, adr: 69,  r: 0.92 },
-    { name: 'Bjarkebille',  k: 36, a: 11,  d: 38, adr: 64,  r: 0.91 },
-    { name: 'G1zdani',      k: 25, a: 3,   d: 30, adr: 70,  r: 0.82 },
+    { name: 'MEKKISSSS',    k: 43, a: 3,   d: 25, adr: 69,  r: 1.36 },
+    { name: 'propit3',      k: 37, a: 12,  d: 33, adr: 82,  r: 1.05 },
+    { name: 'Olelele',      k: 32, a: 14,  d: 30, adr: 69,  r: 1.00 },
+    { name: 'Bjarkebille',  k: 36, a: 11,  d: 38, adr: 64,  r: 0.92 },
+    { name: 'G1zdani',      k: 25, a: 3,   d: 30, adr: 70,  r: 0.80 },
   ],
 };
 
