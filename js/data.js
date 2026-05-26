@@ -325,10 +325,10 @@ const maps = {
         desc:     "Ta outside-kontroll tidlig for å true både A og B (secret).",
         steps: [
           { text: "Smoke walls og main tidlig", players: ["S15T3M", "propit3"] },
-          { text: "3 players tar yard — contest silo og outside", players: ["Birk", "propit3", "Mekkis"] },
+          { text: "3 players tar yard — contest silo og outside", players: ["Birk", "propit3", "Ole"] },
           { text: "2 players tar lobby/ramp kontroll", players: ["S15T3M", "G1zdani"] },
-          { text: "Outside players går ned og tar secret kontroll", players: ["Birk", "propit3", "Mekkis"] },
-          { text: "Ramp og Outside tar site simultant og planter", players: ["propit3", "S15T3M", "G1zdani", "Birk", "Mekkis"] }
+          { text: "Outside players går ned og tar secret kontroll", players: ["Birk", "propit3", "Ole"] },
+          { text: "Ramp og Outside tar site simultant og planter", players: ["propit3", "S15T3M", "G1zdani", "Birk", "Ole"] }
         ],
         utility: [
           { name: "Smokes x4", detail: "Walls, Main, Afterplant, Ramp" },
@@ -346,9 +346,9 @@ const maps = {
         desc:     "Press A simultant fra T ramp og gjennom hut.",
         steps: [
           { text: "1 player committer hardt til T ramp uten å dø", players: ["G1zdani"] },
-          { text: "3 players går hut, venter på utility, pusher på flash", players: ["Mekkis", "Birk", "propit3"] },
+          { text: "3 players går hut, venter på utility, pusher på flash", players: ["Ole", "Birk", "propit3"] },
           { text: "Kaster smoke Heaven, Molly top Hut og Flash", players: ["S15T3M"] },
-          { text: "Ramp går når hut players entryer", players: ["Birk", "G1zdani", "propit3", "Mekkis"] },
+          { text: "Ramp går når hut players entryer", players: ["Birk", "G1zdani", "propit3", "Ole"] },
           { text: "Smoke Main og Heaven, plant default A", players: [""] },
           { text: "Hold ramp room + outside post-plant", players: [""] }
         ],
@@ -368,7 +368,7 @@ const maps = {
         desc:     "Kaster outside smokes (walls), 1 lurker outside og 4 går mot ramp.",
         steps: [
           { text: "1 player smoker walls outside, tar yard og outside kontroll", players: ["Birk"] },
-          { text: "4 players contester ramp", players: ["S15T3M", "propit3", "Mekkis", "G1zdani"] },
+          { text: "4 players contester ramp", players: ["S15T3M", "propit3", "Ole", "G1zdani"] },
           { text: "Outside prøver på timing main/hell/secret", players: ["Birk"] },
           { text: "Mid-round call basert på CT-rotasjoner", players: ["S15T3M", "propit3"] },
           { text: "Execute svakeste site med numbers advantage", players: [""] }
@@ -388,7 +388,7 @@ const maps = {
         inspired: "",
         desc:     "3 players rusher hut, 1 mollyer top hut og 1 utility singledoor.",
         steps: [
-          { text: "3 players beiner hut — 1 legger smoke for molly", players: ["Birk", "propit3", "Mekkis"] },
+          { text: "3 players beiner hut — 1 legger smoke for molly", players: ["Birk", "propit3", "Ole"] },
           { text: "1 player kaster HE door, Smoke main og flash bak fakevent", players: ["G1zdani"] },
           { text: "1 player mollyer top hut og holder lobby flank", players: ["S15T3M"] },
           { text: "Plant safe og hold afterplant", players: [""] }
@@ -408,9 +408,9 @@ const maps = {
         inspired: "",
         desc:     "3 players outside, 2 players lobby/ramp.",
         steps: [
-          { text: "3 players går outside, smoker walls, tar kontroll", players: ["propit3", "Birk", "Mekkis"] },
+          { text: "3 players går outside, smoker walls, tar kontroll", players: ["propit3", "Birk", "Ole"] },
           { text: "2 players tar lobby og radio kontroll", players: ["G1zdani", "S15T3M"] },
-          { text: "Spill runden på info", players: ["propit3", "Birk", "Mekkis", "S15T3M", "Gizdani"] },
+          { text: "Spill runden på info", players: ["propit3", "Birk", "Ole", "S15T3M", "Gizdani"] },
           { text: "Committer mot den svakere siten", players: [""] }
         ],
         utility: [
@@ -429,7 +429,7 @@ const maps = {
         desc:     "Alle 5 beiner ramp. Dreper vi ramp går vi ned, dropper han går vi heaven.",
         steps: [
           { text: "4 med kevlar, 1 med smoke + molly", players: ["S15T3M"] },
-          { text: "5 players pusher ramp — første man hopper ut med hodet ned", players: ["G1zdani", "propit3", "S15T3M", "Mekkis", "Birk"] },
+          { text: "5 players pusher ramp — første man hopper ut med hodet ned", players: ["G1zdani", "propit3", "S15T3M", "Ole", "Birk"] },
           { text: "Dreper vi Ramp går vi ned. Dropper han ned går vi Heaven", players: [""] },
           { text: "Plant og spill smart i afterplant", players: [""] }
         ],
