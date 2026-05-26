@@ -1126,12 +1126,12 @@ const KARTOVERSIKT = [
 const TABELL = [
   { pos:1,  name:'Fjærkrebandittene (CS2)',   s:6, w:5, u:0, l:1, diff:'+7', p:15,  us:true  },
   { pos:2,  name:'Back Breakers (CS2)',       s:6, w:5, u:0, l:1, diff:'+5', p:15,  us:false }, 
-  { pos:3,  name:'VorteX (CS2)',              s:5, w:3, u:0, l:2, diff:'+3', p:9,  us:false },
-  { pos:4,  name:'GAMINGGAMERS',              s:5, w:3, u:0, l:2, diff:'0',  p:9,  us:false }, 
-  { pos:5,  name:'Ocean Cafe & Bar Gaming',   s:5, w:2, u:0, l:3, diff:'+1', p:6,  us:false },
-  { pos:6,  name:'Klompeklattane',            s:4, w:2, u:0, l:2, diff:'+1', p:6,  us:false },
-  { pos:7,  name:'IL Hei E-sport',            s:5, w:2, u:0, l:3, diff:'-3', p:6,  us:false }, 
+  { pos:3,  name:'VorteX (CS2)',              s:6, w:4, u:0, l:2, diff:'+5', p:12,  us:false },
+  { pos:4,  name:'Klompeklattene',            s:6, w:3, u:0, l:3, diff:'+1', p:9,  us:false }, 
+  { pos:5,  name:'IL Hei E-sport',            s:6, w:3, u:0, l:3, diff:'-1', p:9,  us:false },
+  { pos:6,  name:'Gaminggamers',              s:6, w:3, u:0, l:3, diff:'-2', p:9,  us:false },
+  { pos:7,  name:'Ocean Cafe & Bar Gaming',   s:6, w:2, u:0, l:4, diff:'0',  p:6,  us:false }, 
   { pos:8,  name:"99INONE",                   s:6, w:1, u:0, l:5, diff:'-6', p:3,  us:false },
-  { pos:8,  name:'Gatemix E-Sport (CS2)',     s:4, w:0, u:0, l:4, diff:'-8', p:0,  us:false },
+  { pos:8,  name:'Gatemix E-Sport (CS2)',     s:6, w:1, u:0, l:5, diff:'-9', p:3,  us:false },
   { pos:10, name:'Wen Hua 28a [Trukket]',     s:0, w:0, u:0, l:0, diff:'0',  p:0,  us:false, withdrawn:true },
 ];
