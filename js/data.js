@@ -1096,14 +1096,14 @@ const KAMPER = {
    Oppdater etter hver kamp
    ═══════════════════════════════════════════════════════════ */
 const SPILLERSTATS = {
-  kamp: 'vs 99INONE — 14. mai 2026',
-  resultat: 'Win 2–1 (Dust 2 13–9 · Nuke 13-11)',
+  kamp: 'vs Vortex (CS2) — 28. mai 2026',
+  resultat: 'Win 2–0 (Mirage 13–7 · Overpass 13-3)',
   spillere: [
-    { name: 'MEKKISSSS',    k: 43, a: 3,   d: 25, adr: 69,  r: 1.36 },
-    { name: 'propit3',      k: 37, a: 12,  d: 33, adr: 82,  r: 1.05 },
-    { name: 'Olelele',      k: 32, a: 14,  d: 30, adr: 69,  r: 1.00 },
-    { name: 'Bjarkebille',  k: 36, a: 11,  d: 38, adr: 64,  r: 0.92 },
-    { name: 'G1zdani',      k: 25, a: 3,   d: 30, adr: 70,  r: 0.80 },
+    { name: 'S15T3M',        k: 39, a: 5,   d: 21, adr: 107,  r: 1.6 },
+    { name: 'Bjarkebille',   k: 38, a: 7,   d: 20, adr: 96,  r: 1.53 },
+    { name: 'propit3',       k: 29, a: 8,   d: 22, adr: 84,  r: 1.18 },
+    { name: 'G1zdani',       k: 24, a: 6,   d: 16, adr: 68,  r: 1.15 },
+    { name: 'Olelele',       k: 22, a: 10,  d: 23, adr: 73,  r: 0.85 },
   ],
 };
 
@@ -1112,12 +1112,12 @@ const SPILLERSTATS = {
    ═══════════════════════════════════════════════════════════ */
 const KARTOVERSIKT = [
   { name:'Ancient',  pct:75,  w:3, l:1, total:4, diff:'+7',   valgt:0, vraket:0 },
-  { name:'Overpass', pct:100, w:2, l:0, total:2, diff:'13',   valgt:2, vraket:0 },
+  { name:'Overpass', pct:100, w:3, l:0, total:3, diff:'23',   valgt:3, vraket:0 },
   { name:'Nuke',     pct:100, w:4, l:0, total:4, diff:'+21',  valgt:4, vraket:0 },
-  { name:'Anubis',   pct:25,  w:1, l:3, total:4, diff:'-11',  valgt:0, vraket:0 },
+  { name:'Anubis',   pct:25,  w:1, l:3, total:4, diff:'-11',  valgt:0, vraket:1 },
   { name:'Dust II',  pct:100, w:1, l:0, total:1, diff:'+4',    valgt:0, vraket:3 },
-  { name:'Inferno',  pct:0,   w:0, l:0, total:0, diff:'0',    valgt:0, vraket:6 },
-  { name:'Mirage',   pct:0,   w:0, l:0, total:0, diff:'0',    valgt:0, vraket:3 },
+  { name:'Inferno',  pct:0,   w:0, l:0, total:0, diff:'0',    valgt:0, vraket:7 },
+  { name:'Mirage',   pct:100,   w:1, l:0, total:1, diff:'+6',    valgt:0, vraket:3 },
 ];
 
 /* ═══════════════════════════════════════════════════════════
