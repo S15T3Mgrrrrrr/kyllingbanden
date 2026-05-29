@@ -1067,27 +1067,39 @@ const KAMPER = {
       ],
       matchUrl: null,
     },
+    {
+      opponent:  'Back Breakers (CS2)',
+      date:      '2026-05-26',
+      time:      '19:00',
+      result:    'loss',
+      scoreUs:   0,
+      scoreThem: 2,
+      format:    'Bo3',
+      runde:     'Runde 7',
+      maps: [
+        { name: 'Nuke',      result: 'loss',   scoreUs: 10, scoreThem: 13 },
+        { name: 'Anubis',    result: 'loss',   scoreUs: 8,  scoreThem: 8 },
+      ],
+      matchUrl: null,
+    },
+    {
+      opponent:  'Vortex (CS2)',
+      date:      '2026-05-28',
+      time:      '19:00',
+      result:    'win',
+      scoreUs:   2,
+      scoreThem: 0,
+      format:    'Bo3',
+      runde:     'Runde 8',
+      maps: [
+        { name: 'Mirage',      result: 'win',   scoreUs: 13,  scoreThem: 7 },
+        { name: 'Overpass',    result: 'win',   scoreUs: 13,  scoreThem: 3 },
+      ],
+      matchUrl: null,
+    },
   ],
 
   kommende: [
-    {
-      opponent: 'Back Breakers (CS2)',
-      date:     '2026-05-21',
-      time:     '19:00',
-      format:   'Bo3',
-      runde:    'Runde 7',
-      isNext:   false,
-      matchUrl: "https://www.ggarena.no/competitions/komplettligaen-counter-strike-varen-2026/13835/match/256319",
-    },
-    {
-      opponent: 'VorteX (CS2)',
-      date:     '2026-05-28',
-      time:     '19:00',
-      format:   'Bo3',
-      runde:    'Runde 8',
-      isNext:   false,
-      matchUrl: null,
-    },
   ],
 };
 
@@ -1113,7 +1125,7 @@ const SPILLERSTATS = {
 const KARTOVERSIKT = [
   { name:'Ancient',  pct:75,  w:3, l:1, total:4, diff:'+7',   valgt:0, vraket:0 },
   { name:'Overpass', pct:100, w:3, l:0, total:3, diff:'23',   valgt:3, vraket:0 },
-  { name:'Nuke',     pct:100, w:4, l:0, total:4, diff:'+21',  valgt:4, vraket:0 },
+  { name:'Nuke',     pct:80, w:4, l:1, total:5, diff:'+21',  valgt:4, vraket:0 },
   { name:'Anubis',   pct:25,  w:1, l:3, total:4, diff:'-11',  valgt:0, vraket:1 },
   { name:'Dust II',  pct:100, w:1, l:0, total:1, diff:'+4',    valgt:0, vraket:3 },
   { name:'Inferno',  pct:0,   w:0, l:0, total:0, diff:'0',    valgt:0, vraket:7 },
